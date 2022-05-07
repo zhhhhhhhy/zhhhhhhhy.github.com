@@ -1,0 +1,441 @@
+body {
+	padding: 20px;
+}
+
+a {
+  text-decoration: underline;
+  color: #002cbd;
+}
+img {
+  width: 16px;
+  height: 16px;
+
+}
+li {
+  list-style: none;
+}
+
+header>.m-tl {
+  width: 1002px;
+  border-bottom: 4px solid #268fca;
+  /*margin-bottom: ;*/
+}
+
+header>.m-tl>.ui-grid-2,
+header>.m-tl>.ui-grid-21 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+header>.m-tl>.m-tab>span {
+	background: #268fca;
+	color: #fff;
+	padding: 4px 10px 3px;
+	border-radius: 3px 3px 0 0;
+	display: block;
+	text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+header>.m-tl>.m-tip>span {
+	background: #ff6600;
+	color: #fff;
+	padding: 2px 4px;
+	font-size: 15px;
+	border-radius: 3px;
+	text-align: center;
+	margin-bottom: 2px;
+}
+
+header>.m-tl>.m-fun {
+  background: #f6f6f6;
+  border: 1px solid #b2b2b2;
+  height: 22px;
+  line-height: 22px;
+  text-align: right;
+  border-radius: 3px;
+  position: relative;
+}
+
+header>.m-tl>.m-fun>img {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+}
+
+header>.m-tl>.m-fun>span {
+  color: #002cbd;
+  padding: 2px 4px;
+  text-align: center;
+}
+
+header>.m-spend {
+  font-size: 14px;
+}
+
+header>.m-spend>.ui-grid-4 {
+  margin-bottom: 0;
+  
+}
+
+header>.m-spend>.time {
+  color: red;
+  margin-left: 5px;
+  font-weight: 600;
+  /*position: relative;*/
+}
+
+header>.m-spend>.time>img {
+  position: relative;
+  top: 3px;
+}
+
+header>.m-spend>.price {
+  margin-left: 10px;
+}
+
+header>.m-spend>.price>span:last-child {
+  color: red;
+  font-weight: 600;
+}
+
+header>.m-cal {
+  font-size: 14px;
+}
+
+header>.m-cal>.m-total {
+  margin-left: 5px;
+}
+
+header>.m-cal>.m-total>span:last-child {
+  color: red;
+  font-weight: 600;
+}
+
+header>.m-cal>.m-tram>span:last-child {
+  font-weight: 600;
+}
+
+header>.m-cal>.m-change>span:last-child {
+  color: red;
+  font-weight: 600;
+}
+
+header>.m-cal>.ui-grid-4 {
+  margin-bottom: 0;
+}
+
+section>.m-printing {
+  text-align: center;
+  font-size: 14px;
+  width: 1000px;
+  background: #fffbde;
+  border: 1px solid gray;
+}
+
+section>.m-printing>.m-print{
+  position: relative;
+}
+
+section>.m-printing>.m-print>img{
+  position: absolute;
+  top: 3px;
+  left: 20px;
+}
+
+section>.m-printing>.m-catalogue{
+  position: relative;
+}
+
+section>.m-printing>.m-catalogue>img{
+  position: absolute;
+  top: 3px;
+  left: -2px;
+}
+
+section>.m-printing>.ui-grid-2 {
+  margin-bottom: 1px;
+  text-align: right;
+}
+
+section>.m-t_hd {
+  width: 1000px;
+  border-top: 4px solid white;
+  border-bottom: 1px solid white;
+}
+
+section>.m-t_hd>li {
+  text-align: center;
+  background: #cedce8;
+  padding: 0 4px 0;
+  margin: 0;
+}
+
+section>.m-t_hd>li:nth-child(n+2) {
+  border-left: 2px solid white;
+}
+
+
+section>.m-t_hd>li:last-child {
+  border-right: 2px solid #cedce8;
+}
+
+section>.m-bus_station {
+  width: 1000px;
+  background-color: #f2f2f2;
+  border-left: 1px solid #cdcdcd;
+  border-right: 1px solid #cdcdcd;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+section>.m-bus_station>.m-weather {
+  text-align: right;
+  padding-top: 5px;
+}
+
+section>.m-bus_station>.m-position>img {
+  position: relative;
+  top: 2px;
+}
+
+section>.m-bus_station>.ui-grid-4,
+section>.m-bus_station>.ui-grid-19,
+section>.m-bus_station>.ui-grid-2 {
+  margin-bottom: 0;
+}
+
+section>.m-bus_station>.m-position {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+section>.m-bus_station>.m-table_time {
+  text-align: right;
+}
+
+section>.m-bus_station>.m-table_time>a {
+  display: block;
+  margin-top: 4px;
+}
+
+section>.m-t_bd_bus {
+  height: 40px;
+}
+
+section>.m-t_bd_bus>li{
+  text-align: center;
+  padding: 0 4px 0;
+  margin: 0;
+  height: 40px;
+}
+section>.m-t_bd_bus>li:nth-child(n+3) {
+  border-left: 2px solid #cdcdcd;
+}
+
+section>.m-t_bd_bus>.m-bus_time>h4 {
+  margin: 3px 0 -2px 0;
+  font-weight: 600;
+}
+
+section>.m-t_bd_bus>li:nth-child(2) {
+  font-size: 13px;
+  text-align: left;
+  position: relative;
+  border-left: 2px solid white;
+}
+
+section>.m-t_bd_bus>li:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 2px;
+  left: -4px;
+  height: 40px;
+  border-left: 2px solid #96c7d8;
+  border-right: 2px solid #96c7d8;
+}
+
+section>.m-t_bd_bus>li:nth-child(2)>a {
+  display: block;
+  width: 180px;
+  margin-left: 160px;
+  text-decoration: none;
+}
+
+section>.m-t_bd_bus>li:nth-child(2)>img {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+}
+
+section>.m-t_bd_bus>li:nth-child(2)>span {
+  position: absolute;
+  top: 12px;
+  left: 40px;
+  color: #996600;
+}
+
+section>.m-t_bd_bus>li:nth-child(4) {
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+section>.m-train_station {
+  width: 1000px;
+  background-color: #f2f2f2;
+  border: 1px solid #cdcdcd;
+}
+
+section>.m-train_station>.m-train_position>img {
+  position: relative;
+  top: 2px;
+}
+
+section>.m-train_station>.ui-grid-4,
+section>.m-train_station>.ui-grid-12,
+section>.m-train_station>.ui-grid-2,
+section>.m-train_station>.ui-grid-7 {
+  margin-bottom: 0;
+}
+
+section>.m-train_station>.m-train_score {
+  text-align: center;
+  line-height: 40px;
+}
+
+section>.m-train_station>.m-train_position {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+section>.m-train_station>.m-train_line {
+  line-height: 40px;
+  text-align: center;
+}
+
+section>.m-train_station>.m-train_table_time {
+  text-align: right;
+}
+
+section>.m-t_bd_train {
+  height: 40px;
+}
+
+section>.m-t_bd_train>li {
+  text-align: center;
+  padding: 0 4px 0;
+  margin: 0;
+  height: 40px;
+}
+section>.m-t_bd_train>li:nth-child(n+3) {
+  border-left: 2px solid #cdcdcd;
+}
+
+section>.m-t_bd_train>.m-train_time>h4 {
+  margin: 3px 0 -2px 0;
+  font-weight: 600;
+}
+
+
+section>.m-t_bd_train>li:nth-child(2) {
+  font-size: 13px;
+  text-align: left;
+  position: relative;
+  border-left: 2px dashed #96c7d8;
+}
+
+section>.m-t_bd_train>li:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 2px;
+  left: -4px;
+  height: 40px;
+  border-left: 2px solid #96c7d8;
+  border-right: 2px solid #96c7d8;
+}
+
+section>.m-t_bd_train>li:nth-child(2)>a {
+  display: block;
+  width: 180px;
+  margin-left: 160px;
+}
+
+section>.m-t_bd_train>li:nth-child(2)>div {
+  width: 60px;
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 160px;
+  background-color: #0f529e;
+}
+
+section>.m-t_bd_train>li:nth-child(2)>div>a {
+ text-decoration: none;
+  color: white;
+}
+
+section>.m-t_bd_train>li:nth-child(4) {
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+section>.m-t_bd_train>li:last-child {
+  line-height: 40px;
+}
+
+section>.m-t_bd_train>li:nth-child(2)>img {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+}
+
+section>.m-t_bd_train>li:nth-child(2)>span {
+  position: absolute;
+  top: 12px;
+  left: 40px;
+  color: #0099ff;
+}
+
+section>.m-Tokyo_station {
+  width: 1000px;
+  background-color: #f2f2f2;
+  border: 1px solid #cdcdcd;
+}
+
+section>.m-Tokyo_station>.m-Tokyo_position>img {
+  position: relative;
+  top: 2px;
+}
+
+section>.m-Tokyo_station>.ui-grid-4,
+section>.m-Tokyo_station>.ui-grid-12,
+section>.m-Tokyo_station>.ui-grid-2,
+section>.m-Tokyo_station>.ui-grid-7 {
+  margin-bottom: 0;
+}
+
+section>.m-Tokyo_station>.m-Tokyo_weather{
+  text-align: right;
+  padding-top: 13px;
+}
+
+section>.m-Tokyo_station>.m-Tokyo_position {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+section>.m-Tokyo_station>.m-Tokyo_line {
+  line-height: 40px;
+  text-align: center;
+}
+
+section>.m-Tokyo_station>.m-Tokyo_table_time {
+  text-align: right;
+}
+
+

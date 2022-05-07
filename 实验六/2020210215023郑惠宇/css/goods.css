@@ -1,0 +1,137 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+li {
+	list-style: none;
+}
+.buju .goods li:first-child img {
+	width: 100%;
+	height: 100%;
+	background-color: pink;
+}
+.buju {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	width: 1200px;
+	height: 780px;
+	padding: 10px;
+	margin: 0 auto;
+	background-color: #ececec;
+}
+
+.goods {
+	width: 390px;
+	height: 370px;
+	/*border: 1px solid black;*/
+}
+
+.goods li:first-child {
+	height: 260px;
+	background-color: #ffffeb;
+}
+/*文字部分*/
+.goods .message {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+	height: 110px;
+	background-color: white;
+}
+
+.goods .message>span{
+	width: 370px;
+	height: 20px;
+	padding-left: 10px;
+	/*border: 1px solid black;*/
+	background-color: white;
+}
+
+/*标题文字*/
+.goods .message .title {
+	font-size: 8px;
+	line-height: 20px;
+}
+
+/*具体信息*/
+.goods .message .main {
+	/*display: flex;*/
+	font-size: 8px;
+	line-height: 20px;
+	text-overflow:ellipsis;
+ 	white-space:nowrap;
+	overflow:hidden;
+}
+
+.goods .message .main span {
+	font-size: 8px;
+	line-height: 20px;
+}
+
+.goods .message .main span:first-child {
+	color: red;
+}
+
+.goods .message .main span:nth-child(2) {
+	color: gray;
+
+
+}
+
+/*实际价格*/
+.goods .message .price {
+	display: flex;
+	justify-content: space-between;
+	/*align-items: flex-end;*/
+	/*line-height: 30px;*/
+	height: 30px;
+}
+
+.goods .message .price div {
+	display: flex;
+	/*align-items: flex-end;*/
+}
+
+.goods .message .price div:last-child {
+/*	display: flex;*/
+	align-items: flex-end;
+}
+.goods .message .price div:first-child span:first-child {
+	color: red;
+	font-size: 12px;
+	font-weight: 800;
+	align-self: center;
+}
+.goods .message .price div:first-child span:nth-child(2) {
+	color: red;
+	font-size: 20px;
+	font-weight: 800;
+}
+
+.goods .message .price div:first-child span:last-child {
+	color: gray;
+	align-self: flex-end;
+	font-size: 8px;
+	/*font-weight: 800;*/
+	text-decoration: line-through;
+}
+/*.goods .message .price span:first-child {
+	color: red;
+	font-size: 16px;
+	font-weight: 800;
+}*/
+
+.goods .message .price div:last-child span:first-child {
+	color: red;
+	font-size: 8px;
+	font-weight: 800;
+}
+
+.goods .message .price div:last-child span:last-child {
+	color: gray;
+	font-size: 8px;
+	/*font-weight: 800;*/

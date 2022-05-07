@@ -1,0 +1,127 @@
+* {
+	margin: 0;
+}
+li {
+	list-style: none;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+.m-change_button {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.m-change_button button {
+	display: inline-block;
+	margin-right: -6px;
+	width: 120px;
+	height: 30px;
+}
+
+.m-picture_wall {
+	margin: 0 auto;
+	position: relative;
+}
+
+.m-picture_wall  .m-box {
+	margin: 0 auto;
+	width: 1000px;
+	border: 1px solid gray;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.m-picture_wall .m-box li {
+	/*display: inline-block;*/
+	width: 180px;
+	height: 180px;
+	background: pink;
+	margin-left: 16.7px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.m-picture_wall .m-box li img {
+	width: 180px;
+	height: 180px;
+}
+
+.m-picture_wall .m-enlarge {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-200px);
+	width: 400px;
+	height: 400px;
+	background-color: green;
+}
+
+.m-change>.m-box {
+	/*position: relative;*/
+	margin: 0 auto;
+	width: 1000px;
+	height: 500px;
+	/*border: 1px solid gray;*/
+}
+.m-change>.m-box>span {
+	display: block;
+	width: 140px;
+}
+
+.m-to_do_list .m-box {
+	position: relative;
+	margin: 0 auto;
+	width: 1000px;
+	height: 600px;
+	border: 1px solid gray;
+}
+
+.m-to_do_list .m-box .m-work {
+	box-sizing: border-box;
+	width: 800px;
+	height: 30px;
+	margin: 50px 100px;
+	border: 1px solid gray;
+	line-height: 30px;
+}
+
+.m-to_do_list .m-box .m-work .m-delete {
+	box-sizing: border-box;
+	float: right;
+	margin-top: -1px;
+	margin-right: -1px;
+	display: block;
+	width: 70px;
+	height: 30px;
+	border: 1px solid gray;
+}
+
+.m-to_do_list .m-box .m-work .m-xu {
+	box-sizing: border-box;
+	float: left;
+	margin-top: -1px;
+	margin-left: -1px;
+	text-align: center;
+	display: block;
+	width: 40px;
+	height: 30px;
+	border: 1px solid gray;
+}
+
+.m-to_do_list .m-box>button {
+	position: absolute;
+	box-sizing: border-box;
+	display: block;
+	right: 40px;
+	bottom: 40px;
+	background-color: green;
+	color: white;
+	width: 100px;
+	height: 35px;
+	border: 1px solid gray;
+}

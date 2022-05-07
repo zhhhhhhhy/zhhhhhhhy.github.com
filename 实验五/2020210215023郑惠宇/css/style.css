@@ -1,0 +1,266 @@
+* {
+	padding: 0;
+	border: 0;
+}
+li {
+	list-style: none;
+}
+.target {
+	position: absolute;
+	width: 1252px;
+	height: 1204px;
+	left: 50%;
+	margin-left: -626px;
+	opacity: 0.5;
+}
+.target img {
+	width: 100%;
+	height: 100%;
+}
+.bd {
+	width: 1252px;
+	height: 788px;
+	margin: 0 auto;
+	/*background: pink;*/
+}
+.hd {
+	height: 370px;
+	padding: 50px 0px 0 127px;
+	background: white;
+}
+.hd .image {
+	display: inline-block;
+	float: left;
+	width: 490px;
+	height: 320px;
+}
+.hd .image img {
+	width: 100%;
+}
+.hd .word {
+	display: inline-block;
+	width: 463px;
+	margin: 6px 0px 0px 50px;
+}
+.hd .word h2 {
+	font-size: 30px;
+	/*font-weight: 600;*/
+	margin: 0;
+	padding: 0 0 22px 0;
+	position: relative;
+}
+.hd .word h2:before {
+	content: "";
+	display: block;
+	width: 50px;
+	height: 4px;
+	background: #006699;
+	position: absolute;
+	bottom: 0;
+
+}
+.hd .word p {
+	font-size: 25px;
+}
+.hd .word button {
+	width: 200px;
+	height: 44px;
+	background: #0169b2;
+	border-radius: 8px;
+	color: white;
+	margin-top: 4px;
+	padding-left: 20px;
+	text-align: right;
+	padding-right: 20px;
+	font-size: 20px;
+}
+.hd>.word>button>.button-left {
+	float: left;
+}
+.hd>.word>button>.button-right {
+	float: rignt;
+}
+.mid {
+	height: 300px;
+	background: white;
+	padding-left:126px;
+	padding-right: 126px;
+	margin-top: 20px;
+}
+.mid-hd {
+	height: 35px;
+	line-height: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #dddddd;
+}
+.mid-hd .blog {
+	font-size: 32px;
+	color: #005db4;
+	padding-right: 12px;
+	font-weight: 600;
+	font-family: "Microsoft YaHei";
+}
+.mid-hd .name {
+	padding-left: 20px;
+	border-left: 4px solid #005db4;
+	font-size: 18px;
+	font-weight: 600;
+}
+.mid-hd button {
+	float: right;
+	width: 150px;
+	height: 34px;
+	margin-top: 2px;
+	border-radius: 6px;
+	color: white;
+	background: #005db4;
+	text-align: center;
+	font-size: 18px;
+}
+.mid-hd>button>.button-left {
+	float: left;
+	padding-left: 40px;
+}
+.mid-hd>button>.button-right {
+	float: right;
+	padding-right: 18px;
+	/*padding-left: 0px;*/
+}
+.mid>li {
+	/*height: 90px;*/
+	/*background-color: pink;*/
+	/*line-height: 90px;*/
+	/*font-size: 15px;*/
+	padding: 31px 0 28px 0;
+	border-bottom: 2px solid #dddddd;
+}
+.mid>.first {
+	padding: 41px 0 28px 0;
+}
+.mid>li>span {
+	font-size: 14.5px;
+	padding-right: 30px;
+}
+.mid>li>button {
+	width: 110px;
+	height: 25px;
+	background: #019ee3;
+	margin-right: 14px;
+	color: white;
+	font-size: 20px;
+	border-radius: 13px;
+}
+.mid>li>.green {
+	background-color: #5aae73;
+}
+.mid>li>a {
+	color: black;
+	font-size: 20px;
+}
+.foot {
+	width: 1146px;
+	height: 373px;
+	margin: 0 auto;
+	padding: 16px 51px 28px 51px;
+	background-color: #fafafa;/**/
+}
+.foot .title {
+	margin-right: ;
+	font-size: 22px;
+	font-weight: 600;
+}
+.foot>.title>.first-title { 
+	float: left;
+	padding-left: 15px;
+	width: 520px;
+	border-left: 4px solid #085599;
+}
+.foot>.title>.last-title { 
+	float: left;
+	left: 50%;
+	width: 520px;
+	padding-left: 13px;
+	margin-left: 70px;
+	border-left: 4px solid #085599;
+}
+.foot>.first-box {
+	float: left;
+	width: 538px;
+	height: 318px;
+	margin-top: 23px;
+	text-align: center;
+	border: 1px solid gray;
+}
+.foot>.first-box>.p1 {
+	margin-top: 38px;
+	font-size: 22px;
+	color: black;
+}
+.foot>.first-box>.p2 {
+	margin-top: -13px;
+	font-size: 43px;
+	font-weight: 600;
+	color: #236190;
+}
+.foot>.first-box>.p3 {
+	margin-top: -26px;
+	font-size: 20px;
+	font-weight: 600;
+	color: #236190;
+}
+.foot>.first-box>.p4 {
+	margin-top: -18px;
+	font-size: 20px;
+	font-weight: 600;
+	color: #236190;
+}
+.foot>.first-box>.p5 {
+	width: 425px;
+	margin: 0 auto;
+	padding-top: 20px;
+	/*margin-top: -13px;*/
+	border-top: 1px solid gray;
+	font-size: 20px;
+	font-weight: 600;
+	color: #1b5b98;
+}
+.foot>.second-box {
+	float: left;
+	width: 536px;
+	height: 318px;
+	margin-top: 23px;
+	margin-left: 68px;
+	text-align: center;
+	border: 1px solid gray;
+}
+.foot>.second-box>button {
+	width: 430px;
+	height: 70px;
+	background: #019ee3;
+	margin-top: 72px;
+	/*margin-right: 14px;*/
+	color: white;
+	font-size: 20px;
+	border-radius: 8px;
+}
+.foot>.second-box>button>span {
+	font-size: 20px;
+	color: white;
+}
+.foot>.second-box>button>.bl {
+	float: left;
+	padding-left: 80px;
+}
+.foot>.second-box>button>.br {
+	float: right;
+	padding-right: 20px;
+}
+.foot>.second-box>.pp1 {
+	margin-top: 24px;
+}
+.foot>.second-box>.pp2 {
+	margin-top: -8px;
+}
+.foot>.second-box>.pp3 {
+	margin-top: -8px;
+}
