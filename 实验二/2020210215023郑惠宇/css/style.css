@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+.image {
+    
+    width: 1080px;
+    height: 553px;
+    position: absolute;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.f1 {
+	text-align :left;
+	/*top: 20px;*/
+	/*left: 73px;*/
+	margin-left: 50px;
+	margin-bottom: 14px;
+	word-spacing: 19.5px;
+	letter-spacing: 0.9px;
+	/*position: absolute;*/
+
+	/*color: red;
+	font-family: "Microsoft Vahei";
+	font-style: italic;*/
+	font-weight: bold;
+	font-size: 12px;
+}
+.style1 {
+	font-size: 12.3px;
+	font-weight: bold;
+	margin-top: 3px;
+	margin-left: 19.4px;
+	opacity: 0.4;
+	margin-bottom: 2px;
+
+}
+.style2 {
+	font-size: 18.6px;
+	font-weight: bold;
+	margin-top: 0.6px;
+	margin-left: 20px;
+}
+.style3 {
+	font-size: 12.8px;
+	font-weight: bold;
+	margin-top: 9px;
+	margin-left: 19.4px;
+	margin-bottom: 18px;
+	opacity: 0.4;
+}
+.style4 {
+	font-size: 7px;
+	font-weight: 550;
+	margin-top: 10px;
+	margin-left: 19.4px;
+	opacity: 0.6;
+}
+.style5 {
+	font-size: 9px;
+	font-weight: 550;
+	margin-top: 4.7px;
+	margin-left: 19.4px;
+	margin-bottom: 20px;
+	opacity: 0.4;
+}
+.style6 {
+	font-size: 18.7px;
+	font-weight: bold;
+	margin-top: 27px;
+	margin-left: 48px;
+	margin-bottom: 52px;
+	
+}
+.style7 {
+	font-size: 14.5px;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-left: 54px;
+	margin-bottom: 8px;
+}
+.style8 {
+	font-size: 6px;
+	font-weight: 550;
+	margin-top: px;
+	margin-left: 54px;
+	margin-bottom: 5px;
+	opacity: 0.6;
+}
+.style9 {
+	font-size: 8px;
+	font-weight: 550;
+	margin-top: 0px;
+	margin-left: 54px;
+	margin-bottom: 28px;
+	opacity: 0.4;
+}
