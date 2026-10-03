@@ -1,50 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huiyu Zheng · 郑惠宇</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e11'/%3E%3Ctext x='32' y='44' font-size='34' font-family='monospace' font-weight='700' fill='%23ffb454' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --bg:#0b0e11;
+  --panel:#12161c;
+  --panel2:#171c24;
+  --line:#1f2730;
+  --line2:#2a3542;
+  --text:#d8e0e9;
+  --muted:#7d899c;
+  --dim:#56606f;
+  --accent:#ffb454;
+  --accent2:#7fd1c1;
+  --radius:14px;
+  --font-disp:'Space Grotesk','Noto Sans SC',sans-serif;
+  --font-body:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none;transition:color .18s}
+a:hover{color:#ffcc85}
+::selection{background:rgba(255,180,84,.28);color:#fff}
+.container{max-width:1040px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--font-mono)}
+
+/* ===== 顶部导航 ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(11,14,17,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{font-family:var(--font-mono);font-weight:500;letter-spacing:.5px;color:var(--text)}
+.brand b{color:var(--accent)}
+.nav-links{display:flex;gap:26px}
+.nav-links a{color:var(--muted);font-size:14px}
+.nav-links a:hover{color:var(--text)}
+.nav-links a .dot{color:var(--accent2);font-family:var(--font-mono)}
+@media(max-width:640px){.nav-links{gap:16px}.nav-links a{font-size:13px}}
+
+/* ===== Hero ===== */
+.hero{padding:96px 0 72px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-120px;right:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,180,84,.10),transparent 65%);pointer-events:none}
+.hero::after{content:"";position:absolute;bottom:-140px;left:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(127,209,193,.08),transparent 65%);pointer-events:none}
+.kicker{font-family:var(--font-mono);color:var(--accent2);font-size:14px;letter-spacing:1px;margin-bottom:18px}
+.kicker::before{content:"~/";color:var(--dim)}
+h1{font-family:var(--font-disp);font-size:clamp(40px,7vw,68px);font-weight:700;line-height:1.08;letter-spacing:-1px;margin-bottom:14px}
+h1 .ln{color:var(--accent)}
+.hero-sub{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:640px;margin-bottom:26px;font-weight:300}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+.chip{font-family:var(--font-mono);font-size:13px;color:var(--muted);border:1px solid var(--line2);padding:6px 12px;border-radius:8px;background:var(--panel)}
+.chip .k{color:var(--accent)}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:14px;padding:12px 20px;border-radius:10px;cursor:pointer;border:1px solid transparent;transition:all .18s}
+.btn-primary{background:var(--accent);color:#0b0e11;font-weight:500}
+.btn-primary:hover{background:#ffcc85;color:#0b0e11}
+.btn-ghost{border-color:var(--line2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn .arr{transition:transform .18s}
+.btn:hover .arr{transform:translateX(3px)}
+
+/* ===== 章节 ===== */
+section{padding:64px 0}
+.section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:36px}
+.sec-num{font-family:var(--font-mono);color:var(--accent2);font-size:14px}
+.sec-title{font-family:var(--font-disp);font-size:26px;font-weight:600;color:var(--text)}
+.sec-line{flex:1;height:1px;background:var(--line);transform:translateY(-6px)}
+
+/* ===== 关于 ===== */
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:start}
+.about-text p{color:var(--muted);margin-bottom:16px;font-weight:300}
+.about-text strong{color:var(--text);font-weight:500}
+.about-text code{font-family:var(--font-mono);color:var(--accent);font-size:.9em;background:var(--panel);padding:2px 7px;border-radius:6px;border:1px solid var(--line)}
+.about-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.about-card .row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line2)}
+.about-card .row:last-child{border-bottom:none}
+.about-card .lbl{color:var(--dim)}
+.about-card .val{color:var(--text)}
+@media(max-width:720px){.about-grid{grid-template-columns:1fr;gap:24px}}
+
+/* ===== 技能/研究 ===== */
+.skill-group{margin-bottom:22px}
+.skill-group .gname{font-family:var(--font-mono);color:var(--accent2);font-size:13px;letter-spacing:1px;margin-bottom:12px}
+.skill-pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{font-family:var(--font-mono);font-size:13px;color:var(--text);border:1px solid var(--line2);padding:7px 14px;border-radius:999px;background:var(--panel2);transition:all .15s}
+.pill:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.pill .lv{color:var(--dim);font-size:11px;margin-left:6px}
+
+/* ===== 作品集 ===== */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.project{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:all .2s;display:flex;flex-direction:column}
+.project:hover{border-color:var(--line2);transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.project .p-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.project .p-dir{font-family:var(--font-mono);font-size:12px;color:var(--dim)}
+.project .p-type{font-family:var(--font-mono);font-size:11px;color:var(--accent2);border:1px solid var(--line2);padding:3px 8px;border-radius:6px}
+.project h3{font-family:var(--font-disp);font-size:18px;font-weight:600;margin-bottom:8px;color:var(--text)}
+.project p{color:var(--muted);font-size:14px;font-weight:300;flex:1;margin-bottom:16px}
+.project .p-link{font-family:var(--font-mono);font-size:13px;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.project .p-link:hover .arr{transform:translateX(3px)}
+.project .p-link .arr{transition:transform .18s}
+.project .p-links{display:flex;gap:16px;flex-wrap:wrap}
+@media(max-width:360px){.projects-grid{grid-template-columns:1fr}}
+
+/* ===== 观点 ===== */
+.thoughts-note{background:var(--panel);border:1px dashed var(--line2);border-radius:var(--radius);padding:34px;text-align:center}
+.thoughts-note .tn-code{font-family:var(--font-mono);color:var(--accent2);font-size:14px;margin-bottom:10px}
+.thoughts-note h3{font-family:var(--font-disp);font-size:22px;margin-bottom:8px}
+.thoughts-note p{color:var(--muted);font-weight:300;max-width:520px;margin:0 auto}
+
+/* ===== Footer ===== */
+footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--dim);font-family:var(--font-mono);font-size:13px}
+.foot-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.foot-links{display:flex;gap:22px}
+.foot-links a{color:var(--muted)}
+.foot-links a:hover{color:var(--accent)}
+
+/* 代码装饰 */
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
 </head>
 <body>
-	<div>
-		<li>
-			<a href="实验二/2020210215023郑惠宇/index.html">2</a>
-		</li>
-		
-		<li>
-			<a href="实验三/2020210215023郑惠宇/index.html">3</a>
-		</li>
-		
-		<li>
-			<a href="实验四/2020210215023郑惠宇/index.html">4</a>
-		</li>
-	
-		<li>
-			<a href="实验五/2020210215023郑惠宇/index.html">5</a>
-		</li>
-	
-		<li>
-			<a href="实验六/2020210215023郑惠宇/index.html">6.1</a>
-		</li>
-	
-	    <li>
-			<a href="实验六/2020210215023郑惠宇/goods.html">6.2</a>
-		</li>
 
-		<li>
-			<a href="实验七/2020210215023郑惠宇/index.html">7</a>
-		</li>
-		
-		<li>
-			<a href="实验八/2020210215023郑惠宇/index.html">8</a>
-		</li>
-	
-		<li>
-			<a href="实验九/2020210215023郑惠宇/mobile.html">9.1</a>
-		</li>
-        <li>
-			<a href="实验九/2020210215023郑惠宇/desktop.html">9.2</a>
-		</li>
-	</div>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">&lt;<b>Z</b>heng/&gt;</a>
+    <nav class="nav-links">
+      <a href="#about"><span class="dot">01.</span> 关于</a>
+      <a href="#research"><span class="dot">02.</span> 研究</a>
+      <a href="#projects"><span class="dot">03.</span> 作品</a>
+      <a href="#thoughts"><span class="dot">04.</span> 观点</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container">
+    <div class="kicker">AI Agent · 控制科学 · 计算机</div>
+    <h1>Hi, I'm <span class="ln">Huiyu Zheng</span></h1>
+    <p class="hero-sub">郑惠宇 · 研究生，专注 <strong style="color:var(--text);font-weight:500">AI Agent</strong> 与检索增强（RAG）方向。这里记录我的研究、作品与一些观点。</p>
+    <div class="hero-tags">
+      <span class="chip"><span class="k">python</span> 熟悉</span>
+      <span class="chip"><span class="k">agent</span> 工具调用</span>
+      <span class="chip"><span class="k">rag</span> Graph / Wave</span>
+      <span class="chip"><span class="k">feishu</span> API</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#projects">查看作品 <span class="arr">→</span></a>
+      <a class="btn btn-ghost" href="https://github.com/zhhhhhhhy" target="_blank" rel="noopener">GitHub <span class="arr">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">关于我</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>我是 <strong>郑惠宇（Huiyu Zheng）</strong>，一名控制科学 / 计算机方向的研究生。当前的研究兴趣集中在 <strong>AI Agent</strong> 的构建与 <strong>检索增强生成（RAG）</strong> 相关技术上——包括工具调用机制、Graph RAG、Wave RAG 等前沿方向，也在探索大模型工具调用是「涌现」还是「微调」所得这类基础问题。</p>
+        <p>我习惯亲手把想法跑成系统：曾在本地 GPU 上搭建文件知识库检索系统，也常用飞书 API、Cloud Code 等工具把工作流自动化。这里是我沉淀思考与作品的地方，欢迎交流。</p>
+        <div class="hero-tags" style="margin-bottom:0">
+          <span class="chip"><span class="k">Python</span></span>
+          <span class="chip"><span class="k">PyTorch</span></span>
+          <span class="chip"><span class="k">Graph RAG</span></span>
+          <span class="chip"><span class="k">Wave RAG</span></span>
+          <span class="chip"><span class="k">飞书 API</span></span>
+          <span class="chip"><span class="k">Cloud Code</span></span>
+          <span class="chip"><span class="k">Git</span></span>
+        </div>
+      </div>
+      <div class="about-card">
+        <div class="row"><span class="lbl">name</span><span class="val">Huiyu Zheng</span></div>
+        <div class="row"><span class="lbl">role</span><span class="val">研究生 · AI Agent</span></div>
+        <div class="row"><span class="lbl">github</span><span class="val">zhhhhhhhy</span></div>
+        <div class="row"><span class="lbl">field</span><span class="val">控制 · 计算机</span></div>
+        <div class="row"><span class="lbl">email</span><span class="val">1301195487@qq.com</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="container">
+    <div class="section-head">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">研究兴趣</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="skill-group">
+      <div class="gname">// AI Agent 与工具调用</div>
+      <div class="skill-pills">
+        <span class="pill">大模型工具调用<span class="lv">· 涌现 vs 微调</span></span>
+        <span class="pill">Agent 系统设计</span>
+        <span class="pill">Code Interpreter</span>
+        <span class="pill">多智能体协作</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="gname">// 检索增强生成（RAG）</div>
+      <div class="skill-pills">
+        <span class="pill">Graph RAG</span>
+        <span class="pill">Wave RAG</span>
+        <span class="pill">知识库检索</span>
+        <span class="pill">长上下文建模</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="gname">// 工程与工具</div>
+      <div class="skill-pills">
+        <span class="pill">Python</span>
+        <span class="pill">PyTorch</span>
+        <span class="pill">飞书 API</span>
+        <span class="pill">Cloud Code</span>
+        <span class="pill">Git / Linux</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title">作品 / 课程项目</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="projects-grid">
+      <article class="project">
+        <div class="p-top"><span class="p-dir">实验二 /</span><span class="p-type">前端实验</span></div>
+        <h3>基础页面布局</h3>
+        <p>Web 前端课程练习，构建基础 HTML 结构与 CSS 布局。</p>
+        <a class="p-link" href="实验二/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
+      </article>
+      <article class="project">
+        <div class="p-top"><span class="p-dir">实验三 /</span><span class="p-type">前端实验</span></div>
+        <h3>CSS 样式与排版</h3>
+        <p>Web 前端课程练习，聚焦样式设计、字体与排版。</p>
+        <a class="p-link" href="实验三/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
+      </article>
+      <article class="project">
+        <div class="p-top"><span class="p-dir">实验四 /</span><span class="p-type">前端实验</span></div>
+        <h3>布局与盒模型</h3>
+        <p>Web 前端课程练习，练习盒模型与常见布局方式。</p>
+        <a class="p-link" href="实验四/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
+      </article>
+      <article class="project">
+        <div class="p-top"><span class="p-dir">实验五 /</span><span class="p-type">前端实验</span></div>
+        <h3>组件与样式化</h3>
+        <p>Web 前端课程练习，构建样式化页面组件。</p>
+        <a class="p-link" href="实验五/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
+      </article>
+      <article class="project">
+        <div class="p-top"><span class="p-dir">实验六 /</span><span class="p-type">前端实验</span></div>
+        <h3>商品与列表页</h3>
+        <p>Web 前端课程练习，包含列表页与商品详情页。</p>
+        <div class="p-links">
+          <a class="p-link" href="实验六/2020210215023郑惠宇/index.html">6.1 列表 <span class="arr">→</span></a>
+          <a class="p-link" href="实验六/2020210215023郑惠宇/goods.html">6.2 详情 <span class="arr">→</span></a>
+        </div>
+      </article>
+      <article class="project">
+        <div class="p-top"><span class="p-dir">实验七 /</span><span class="p-type">前端实验</span></div>
+        <h3>页面综合练习</h3>
+        <p>Web 前端课程练习，综合性页面构建与样式。</p>
+        <a class="p-link" href="实验七/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
+      </article>
+      <article class="project">
+        <div class="p-top"><span class="p-dir">实验八 /</span><span class="p-type">前端实验</span></div>
+        <h3>交互与脚本</h3>
+        <p>Web 前端课程练习，加入 JavaScript 交互与脚本。</p>
+        <a class="p-link" href="实验八/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
+      </article>
+      <article class="project">
+        <div class="p-top"><span class="p-dir">实验九 /</span><span class="p-type">响应式</span></div>
+        <h3>移动端 / 桌面端适配</h3>
+        <p>Web 前端课程练习，移动端与桌面端双版本页面。</p>
+        <div class="p-links">
+          <a class="p-link" href="实验九/2020210215023郑惠宇/mobile.html">9.1 移动端 <span class="arr">→</span></a>
+          <a class="p-link" href="实验九/2020210215023郑惠宇/desktop.html">9.2 桌面 <span class="arr">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="thoughts">
+  <div class="container">
+    <div class="section-head">
+      <span class="sec-num">04</span>
+      <h2 class="sec-title">观点 / 想法</h2>
+      <span class="sec-line"></span>
+    </div>
+    <div class="thoughts-note">
+      <div class="tn-code">// TODO: 这里将记录我的观点与想法</div>
+      <h3>正在整理中</h3>
+      <p>关于 AI Agent、RAG、工程实践与生活的思考，我会陆续写在这里。告诉我你的想法，我们随时可以开一篇。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-row">
+      <span>© 2026 Huiyu Zheng · built with &lt;html&gt; &amp; &lt;css&gt;</span>
+      <div class="foot-links">
+        <a href="https://github.com/zhhhhhhhy" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:1301195487@qq.com">Email</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
