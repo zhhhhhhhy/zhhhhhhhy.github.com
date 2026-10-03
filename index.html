@@ -111,6 +111,15 @@ section{padding:64px 0}
 .thoughts-note .tn-code{font-family:var(--font-mono);color:var(--accent2);font-size:14px;margin-bottom:10px}
 .thoughts-note h3{font-family:var(--font-disp);font-size:22px;margin-bottom:8px}
 .thoughts-note p{color:var(--muted);font-weight:300;max-width:520px;margin:0 auto}
+.post-list{display:flex;flex-direction:column;gap:16px}
+.post-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;transition:all .2s}
+.post-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.3)}
+.post-card .pc-meta{font-family:var(--font-mono);font-size:12px;color:var(--accent2);margin-bottom:8px;letter-spacing:.5px}
+.post-card h3{font-family:var(--font-disp);font-size:20px;font-weight:600;margin-bottom:8px;color:var(--text)}
+.post-card p{color:var(--muted);font-size:14px;font-weight:300;margin-bottom:14px}
+.post-card .pc-link{font-family:var(--font-mono);font-size:13px;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.post-card .pc-link:hover .arr{transform:translateX(3px)}
+.post-card .pc-link .arr{transition:transform .18s}
 
 /* ===== Footer ===== */
 footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--dim);font-family:var(--font-mono);font-size:13px}
@@ -298,10 +307,13 @@ footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--dim);fon
       <h2 class="sec-title">观点 / 想法</h2>
       <span class="sec-line"></span>
     </div>
-    <div class="thoughts-note">
-      <div class="tn-code">// TODO: 这里将记录我的观点与想法</div>
-      <h3>正在整理中</h3>
-      <p>关于 AI Agent、RAG、工程实践与生活的思考，我会陆续写在这里。告诉我你的想法，我们随时可以开一篇。</p>
+    <div class="post-list">
+      <a class="post-card" href="posts/fake-work.html" style="text-decoration:none;color:inherit">
+        <div class="pc-meta">2026-10-04 · # 反思 · # 效率</div>
+        <h3>fake work：我不是不努力，而是被「假装努力」困住了</h3>
+        <p>关于 fake work 是什么、我如何被它困住三年、以及评价（evaluate）为什么是这一切的根。</p>
+        <span class="pc-link">阅读全文 <span class="arr">→</span></span>
+      </a>
     </div>
   </div>
 </section>

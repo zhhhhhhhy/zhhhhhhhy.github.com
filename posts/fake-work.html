@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fake work：我不是不努力，而是被「假装努力」困住了 · Huiyu Zheng</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e11'/%3E%3Ctext x='32' y='44' font-size='34' font-family='monospace' font-weight='700' fill='%23ffb454' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --bg:#0b0e11;--panel:#12161c;--line:#1f2730;--line2:#2a3542;
+  --text:#d8e0e9;--muted:#7d899c;--dim:#56606f;
+  --accent:#ffb454;--accent2:#7fd1c1;--radius:14px;
+  --font-disp:'Space Grotesk','Noto Sans SC',sans-serif;
+  --font-body:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:#ffcc85}
+::selection{background:rgba(255,180,84,.28);color:#fff}
+.container{max-width:760px;margin:0 auto;padding:0 22px}
+
+/* 顶栏 */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(11,14,17,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;height:54px;max-width:760px;margin:0 auto;padding:0 22px}
+.back{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.back:hover{color:var(--accent)}
+.brand{font-family:var(--font-mono);font-size:13px;color:var(--dim)}
+.brand b{color:var(--accent)}
+
+/* 文章 */
+article{padding:52px 0 40px}
+.post-kicker{font-family:var(--font-mono);color:var(--accent2);font-size:14px;letter-spacing:1px;margin-bottom:16px}
+.post-kicker::before{content:"~/posts/";color:var(--dim)}
+h1.title{font-family:var(--font-disp);font-size:clamp(28px,4.5vw,38px);font-weight:700;line-height:1.25;letter-spacing:-.5px;margin-bottom:14px}
+.post-meta{font-family:var(--font-mono);font-size:13px;color:var(--dim);margin-bottom:34px;display:flex;gap:18px;flex-wrap:wrap}
+.post-meta .tag{color:var(--accent2)}
+
+/* 正文 */
+.body p{margin-bottom:20px;color:var(--text);font-weight:300}
+.body strong{color:#fff;font-weight:500}
+.body em{color:var(--accent)}
+.body h2{font-family:var(--font-disp);font-size:22px;font-weight:600;margin:36px 0 16px;color:var(--text)}
+.body h2 .n{color:var(--accent);font-family:var(--font-mono);font-size:16px;margin-right:10px}
+.body blockquote{margin:26px 0;padding:18px 22px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;color:var(--text);font-weight:300}
+.body blockquote .qk{display:block;font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box{margin:26px 0;padding:20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+.body .hl-box .t{font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box p{margin:0;color:var(--muted);font-size:16px}
+.body code{font-family:var(--font-mono);color:var(--accent);font-size:.88em;background:var(--panel);padding:2px 7px;border-radius:6px;border:1px solid var(--line)}
+.body ul,.body ol{margin:0 0 20px 4px;padding-left:22px;color:var(--text);font-weight:300}
+.body li{margin-bottom:10px}
+.body li b{color:#fff;font-weight:500}
+
+.end-mark{margin:44px 0 8px;font-family:var(--font-mono);color:var(--dim);font-size:14px}
+.divider{height:1px;background:var(--line);margin:8px 0 30px}
+
+footer{padding:20px 0 60px;color:var(--dim);font-family:var(--font-mono);font-size:13px}
+.foot-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-row a{color:var(--muted)}
+.foot-row a:hover{color:var(--accent)}
+@media(max-width:560px){body{font-size:16px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="back" href="../index.html">← 返回主页</a>
+    <span class="brand">&lt;<b>Z</b>heng/&gt;</span>
+  </div>
+</div>
+
+<article class="container">
+  <div class="post-kicker">观点 · fake work</div>
+  <h1 class="title">fake work：我不是不努力，而是被「假装努力」困住了</h1>
+  <div class="post-meta">
+    <span>2026-10-04</span>
+    <span class="tag"># 反思</span>
+    <span class="tag"># 效率</span>
+  </div>
+
+  <div class="body">
+    <p>最近刷到课代表立正讲的一个概念，叫 <strong>fake work</strong>——一个人看着很努力，忙到飞起，但真正产出的成果几乎为零。第一反应是：这不就是我吗。</p>
+    <p>于是我把过去这几年翻出来重新看了一遍。写这篇东西，既是解释这个概念，也是给自己做个清算。</p>
+
+    <h2><span class="n">01</span>fake work 是什么</h2>
+    <p>一句话：<strong>看似在努力，实则无成果、无进步。</strong>它最典型的几个特征：</p>
+    <ul>
+      <li><b>输入型忙碌</b>——把"学、看、收藏"当成产出。看了很多、学了很多，但没有一件"做出来、被验证、被使用"的东西。</li>
+      <li><b>过程很满，结果为零</b>——时间表排满，事情做了一堆，但每件事都没有一个"可验证的完成"。</li>
+      <li><b>用忙碌回避难事</b>——真正难的是产出（写出来、做出来、跑通、被评判），它有风险、可能失败；于是用简单琐碎的事把时间填满，因为那些事有即时完成感、没有失败感。</li>
+    </ul>
+    <p>为什么它会存在？根子出在 <strong>评价（evaluate）的错位</strong>上，我放在第三节细讲。</p>
+
+    <h2><span class="n">02</span>我的现状：三年工位，零产出</h2>
+    <p>读研三年，<strong>我没有一天不在工位</strong>。早上来，晚上走，看起来很自律、很投入。但三年过去，我拿不出一件"非常好或非常有用"的工作，web coding 的能力也不算强。</p>
+    <p>问题不在我不努力，而在于我的努力长成了 fake work 的样子：</p>
+    <ul>
+      <li>我接触了很多概念——Graph RAG、Wave RAG、工具调用、Agent 系统——但几乎没有把它们变成一件"做出来、能被别人看到、能被验证"的东西。</li>
+      <li>我把"学习动作"当成了"产出"，用输入填满每一天，回避那些真正有风险、可能失败、需要拿结果出来的时刻。</li>
+      <li>我确实每天坐在工位，但一天结束时，我很少能指着一件东西说"这就是我今天的成果"。</li>
+    </ul>
+    <p>这就是 fake work 最吊诡的地方：它骗过了别人，也骗过了我自己——我甚至真心觉得自己很努力。直到我看到这个概念，才第一次觉得被照见了。</p>
+
+    <h2><span class="n">03</span>evaluate 的重要性</h2>
+    <p>为什么 fake work 会存在？因为它生长在一个<strong>评价错位</strong>的系统里，错位有三层：</p>
+    <div class="hl-box"><span class="t">// 评价错位三层</span>
+      <p>① <strong>评错了对象</strong>——评的是"忙碌/投入"，不是"产出"。于是人理性地去优化"被看到的信号"：表现得忙。<br>
+      ② <strong>标准模糊</strong>——没有清晰、可验证的"什么算完成"，行为必然漂移向有即时反馈的事，回避高风险产出。<br>
+      ③ <strong>恐惧内化</strong>——人不是被"产出目标"驱动，而是被"怕被评判"驱动，于是停在过程里不敢出去。</p>
+    </div>
+    <p>所以 fake work 不是"不努力"的产物，而是<strong>"评价错了"</strong>的产物。相应地，解药也在 evaluate——不是取消评价，而是把评价做对：</p>
+    <ul>
+      <li><b>评产出，不评忙碌</b>——掐断第一层。</li>
+      <li><b>让完成标准清晰可验证</b>——给每个任务定义"什么算完成"，掐断第二层。</li>
+      <li><b>把恐惧变成反馈</b>——让产出被看到、被迭代（比如写博客、推上 GitHub、发给同行），拆掉第三层。</li>
+    </ul>
+
+    <blockquote>
+      <span class="qk">// 我最想强调的一句</span>
+      真正该警惕的，不是"不干活"，而是"一直在 fake work"。躺平的人知道自己没干活，随时能停下来开始努力；fake work 的人以为自己很努力，于是永远不去修正——它把"止损"的机会一起关掉了。躺平损失的是时间，fake work 损失的是时间，外加改正的可能。
+    </blockquote>
+
+    <h2><span class="n">04</span>结语</h2>
+    <p>这篇先写到这里。对我自己，第一步是把"在工位"重新定义成"有产出才算数"——每天结束时，能指着一件被验证、被看到的东西说"这就是我今天做的"。</p>
+    <p>如果你也隐约觉得自己在 fake work 里，希望你能比我更早认出来。它比躺平隐蔽，也比躺平更贵。</p>
+  </div>
+
+  <div class="end-mark">// EOF</div>
+  <div class="divider"></div>
+</article>
+
+<footer class="container">
+  <div class="foot-row">
+    <span>© 2026 Huiyu Zheng</span>
+    <a href="../index.html">← 返回主页</a>
+  </div>
+</footer>
+
+</body>
+</html>
