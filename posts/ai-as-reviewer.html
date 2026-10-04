@@ -41,8 +41,14 @@ h1.title{font-family:var(--font-disp);font-size:clamp(28px,4.5vw,38px);font-weig
 /* 正文 */
 .body p{margin-bottom:20px;color:var(--text);font-weight:300}
 .body strong{color:#fff;font-weight:500}
+.body em{color:var(--accent)}
+.body h2{font-family:var(--font-disp);font-size:22px;font-weight:600;margin:36px 0 16px;color:var(--text)}
+.body h2 .n{color:var(--accent);font-family:var(--font-mono);font-size:16px;margin-right:10px}
 .body blockquote{margin:26px 0;padding:18px 22px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;color:var(--text);font-weight:300}
 .body blockquote .qk{display:block;font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box{margin:26px 0;padding:20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+.body .hl-box .t{font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box p{margin:0;color:var(--muted);font-size:16px}
 
 .end-mark{margin:44px 0 8px;font-family:var(--font-mono);color:var(--dim);font-size:14px}
 .divider{height:1px;background:var(--line);margin:8px 0 30px}
@@ -68,13 +74,26 @@ footer{padding:20px 0 60px;color:var(--dim);font-family:var(--font-mono);font-si
   <h1 class="title">AI 怎么做 Reviewer</h1>
   <div class="post-meta">
     <span>2026-10-04</span>
-    <span class="tag"># 待写</span>
+    <span class="tag"># AI 工程</span>
+    <span class="tag"># 团队协作</span>
   </div>
 
   <div class="body">
+    <p>最近在琢磨一个问题：AI 时代，code review 该怎么做？过去 review 是"人看人写的代码"，但现在代码越来越多是 AI 写的——那 review 这件事，是不是也该重新分工？</p>
+
+    <h2><span class="n">01</span>Anthropic 的做法：AI 审实现，人审意图</h2>
+    <p>Anthropic（Claude 背后的公司）在一个演讲里讲过一套很清晰的分工：<strong>他们基本已经让 AI 去审"实现、风格、安全性和编译情况"，而把"意图、技术方案、业务逻辑和设计取舍"留给人类去审。</strong></p>
+
+    <h2><span class="n">02</span>为什么这个分工成立</h2>
+    <p>实现层面的东西——有没有 bug、风格统不统一、安不安全、能不能编译通过——这些是<strong>"可穷举、可自动化"</strong>的：AI 又快又全面，天然适合它。</p>
+    <p>而意图与技术方案——"这个改动为什么存在""业务逻辑对不对""设计上为什么这样取舍"——这些是<strong>判断</strong>：需要理解业务、理解上下文、对结果负责。交给 AI 不放心，也本该留在人手里。</p>
+
+    <h2><span class="n">03</span>我的理解</h2>
+    <p>这和我们前面聊的 vibe coding 是同一个逻辑：把"做得快、做得全"的环节交给 AI，把"想清楚、做判断"的环节留给人。review 不再是人肉逐行挑错，而是人专注在真正需要判断力的地方。</p>
+
     <blockquote>
       <span class="qk">// TODO</span>
-      这篇文章还在构思中，先占位。想清楚后，会在这里补上对"AI 怎么做 Reviewer"的完整思考。
+      这篇还在完善中，先把 Anthropic 这套"AI 审实现、人审意图"的人机分工记在这里，后续继续补。
     </blockquote>
   </div>
 
