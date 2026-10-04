@@ -92,7 +92,8 @@ section{padding:64px 0}
 .pill .lv{color:var(--dim);font-size:11px;margin-left:6px}
 
 /* ===== 作品集 ===== */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(min-width:1000px){.projects-grid{grid-template-columns:repeat(4,1fr)}}
 .project{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:all .2s;display:flex;flex-direction:column}
 .project:hover{border-color:var(--line2);transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.35)}
 .project .p-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
@@ -104,7 +105,7 @@ section{padding:64px 0}
 .project .p-link:hover .arr{transform:translateX(3px)}
 .project .p-link .arr{transition:transform .18s}
 .project .p-links{display:flex;gap:16px;flex-wrap:wrap}
-@media(max-width:360px){.projects-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.projects-grid{grid-template-columns:1fr}}
 
 /* ===== 观点 ===== */
 .thoughts-note{background:var(--panel);border:1px dashed var(--line2);border-radius:var(--radius);padding:34px;text-align:center}
@@ -148,14 +149,14 @@ footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--dim);fon
 
 <section class="hero" id="top">
   <div class="container">
-    <div class="kicker">AI Agent · 控制科学 · 计算机</div>
+    <div class="kicker">AI Agent · RAG · 计算机科学</div>
     <h1>Hi, I'm <span class="ln">Huiyu Zheng</span></h1>
-    <p class="hero-sub">郑惠宇 · 研究生，专注 <strong style="color:var(--text);font-weight:500">AI Agent</strong> 与检索增强（RAG）方向。这里记录我的研究、作品与一些观点。</p>
+    <p class="hero-sub">郑惠宇 · 计算机科学方向研究生，聚焦 <strong style="color:var(--text);font-weight:500">检索增强生成（RAG）</strong> 与 AI Agent 的构建。这里记录我的研究、作品与一些观点。</p>
     <div class="hero-tags">
-      <span class="chip"><span class="k">python</span> 熟悉</span>
-      <span class="chip"><span class="k">agent</span> 工具调用</span>
       <span class="chip"><span class="k">rag</span> Graph / Wave</span>
-      <span class="chip"><span class="k">feishu</span> API</span>
+      <span class="chip"><span class="k">agent</span> 工具调用</span>
+      <span class="chip"><span class="k">skill</span> 开发</span>
+      <span class="chip"><span class="k">web</span> coding</span>
     </div>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#projects">查看作品 <span class="arr">→</span></a>
@@ -173,23 +174,22 @@ footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--dim);fon
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>我是 <strong>郑惠宇（Huiyu Zheng）</strong>，一名控制科学 / 计算机方向的研究生。当前的研究兴趣集中在 <strong>AI Agent</strong> 的构建与 <strong>检索增强生成（RAG）</strong> 相关技术上——包括工具调用机制、Graph RAG、Wave RAG 等前沿方向，也在探索大模型工具调用是「涌现」还是「微调」所得这类基础问题。</p>
-        <p>我习惯亲手把想法跑成系统：曾在本地 GPU 上搭建文件知识库检索系统，也常用飞书 API、Cloud Code 等工具把工作流自动化。这里是我沉淀思考与作品的地方，欢迎交流。</p>
+        <p>我是 <strong>郑惠宇（Huiyu Zheng）</strong>，一名计算机科学方向的研究生，当前聚焦于 <strong>检索增强生成（RAG）</strong> 方向。我关注 AI Agent 的构建与工具调用机制，也关注 Graph RAG、Wave RAG 等前沿检索增强技术，探索让大模型更可靠地组织、检索并利用知识。</p>
+        <p>我习惯亲手把想法跑成系统，把研究落到可运行、可验证的工程里。这里是我沉淀思考与作品的地方，欢迎交流。</p>
         <div class="hero-tags" style="margin-bottom:0">
           <span class="chip"><span class="k">Python</span></span>
           <span class="chip"><span class="k">PyTorch</span></span>
           <span class="chip"><span class="k">Graph RAG</span></span>
           <span class="chip"><span class="k">Wave RAG</span></span>
           <span class="chip"><span class="k">飞书 API</span></span>
-          <span class="chip"><span class="k">Cloud Code</span></span>
           <span class="chip"><span class="k">Git</span></span>
         </div>
       </div>
       <div class="about-card">
         <div class="row"><span class="lbl">name</span><span class="val">Huiyu Zheng</span></div>
-        <div class="row"><span class="lbl">role</span><span class="val">研究生 · AI Agent</span></div>
+        <div class="row"><span class="lbl">role</span><span class="val">研究生 · 计算机科学</span></div>
         <div class="row"><span class="lbl">github</span><span class="val">zhhhhhhhy</span></div>
-        <div class="row"><span class="lbl">field</span><span class="val">控制 · 计算机</span></div>
+        <div class="row"><span class="lbl">field</span><span class="val">RAG · AI Agent</span></div>
         <div class="row"><span class="lbl">email</span><span class="val">1301195487@qq.com</span></div>
       </div>
     </div>
@@ -206,10 +206,10 @@ footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--dim);fon
     <div class="skill-group">
       <div class="gname">// AI Agent 与工具调用</div>
       <div class="skill-pills">
-        <span class="pill">大模型工具调用<span class="lv">· 涌现 vs 微调</span></span>
+        <span class="pill">大模型工具调用</span>
         <span class="pill">Agent 系统设计</span>
-        <span class="pill">Code Interpreter</span>
         <span class="pill">多智能体协作</span>
+        <span class="pill">Skill 开发</span>
       </div>
     </div>
     <div class="skill-group">
@@ -222,12 +222,12 @@ footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--dim);fon
       </div>
     </div>
     <div class="skill-group">
-      <div class="gname">// 工程与工具</div>
+      <div class="gname">// AI 工程与工具</div>
       <div class="skill-pills">
         <span class="pill">Python</span>
         <span class="pill">PyTorch</span>
+        <span class="pill">Web Coding</span>
         <span class="pill">飞书 API</span>
-        <span class="pill">Cloud Code</span>
         <span class="pill">Git / Linux</span>
       </div>
     </div>
@@ -238,63 +238,33 @@ footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--dim);fon
   <div class="container">
     <div class="section-head">
       <span class="sec-num">03</span>
-      <h2 class="sec-title">作品 / 课程项目</h2>
+      <h2 class="sec-title">作品 / 项目</h2>
       <span class="sec-line"></span>
     </div>
     <div class="projects-grid">
       <article class="project">
-        <div class="p-top"><span class="p-dir">实验二 /</span><span class="p-type">前端实验</span></div>
-        <h3>基础页面布局</h3>
-        <p>Web 前端课程练习，构建基础 HTML 结构与 CSS 布局。</p>
-        <a class="p-link" href="实验二/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
+        <div class="p-top"><span class="p-dir">RAGForm /</span><span class="p-type">RAG 系统</span></div>
+        <h3>证据门控的企业知识库智能填表系统</h3>
+        <p>把企业材料转换成可核对、可追溯的表单候选答案；证据不足、冲突或格式不符时停止自动填写并转人工确认。FastAPI + PostgreSQL/pgvector，本地优先，254 项测试通过。</p>
+        <a class="p-link" href="https://github.com/zhhhhhhhy/RAGForm" target="_blank" rel="noopener">查看源码 <span class="arr">↗</span></a>
       </article>
       <article class="project">
-        <div class="p-top"><span class="p-dir">实验三 /</span><span class="p-type">前端实验</span></div>
-        <h3>CSS 样式与排版</h3>
-        <p>Web 前端课程练习，聚焦样式设计、字体与排版。</p>
-        <a class="p-link" href="实验三/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
+        <div class="p-top"><span class="p-dir">Auto-Arxiv-For-Agent /</span><span class="p-type">Agent 自动化</span></div>
+        <h3>Agent 方向 arXiv 论文自动采集</h3>
+        <p>聚焦智能体（Agent）方向的 arXiv 论文自动采集 Agent：官方 API 拉取元数据、按子方向分类归档、生成结构化中文总结与规则化质量评审。</p>
+        <a class="p-link" href="https://github.com/zhhhhhhhy/Auto-Arxiv-For-Agent" target="_blank" rel="noopener">查看源码 <span class="arr">↗</span></a>
       </article>
       <article class="project">
-        <div class="p-top"><span class="p-dir">实验四 /</span><span class="p-type">前端实验</span></div>
-        <h3>布局与盒模型</h3>
-        <p>Web 前端课程练习，练习盒模型与常见布局方式。</p>
-        <a class="p-link" href="实验四/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
+        <div class="p-top"><span class="p-dir">DemoPilot /</span><span class="p-type">Agent 工程</span></div>
+        <h3>Agent Team Demo 工厂</h3>
+        <p>由 Agent Team 亲手造出来的 Demo 工厂：人类负责目标、边界与最终验收，Agent 完成架构、前后端开发、浏览器测试、失败复盘与迭代。</p>
+        <a class="p-link" href="https://github.com/zhhhhhhhy/DemoPilot" target="_blank" rel="noopener">查看源码 <span class="arr">↗</span></a>
       </article>
       <article class="project">
-        <div class="p-top"><span class="p-dir">实验五 /</span><span class="p-type">前端实验</span></div>
-        <h3>组件与样式化</h3>
-        <p>Web 前端课程练习，构建样式化页面组件。</p>
-        <a class="p-link" href="实验五/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
-      </article>
-      <article class="project">
-        <div class="p-top"><span class="p-dir">实验六 /</span><span class="p-type">前端实验</span></div>
-        <h3>商品与列表页</h3>
-        <p>Web 前端课程练习，包含列表页与商品详情页。</p>
-        <div class="p-links">
-          <a class="p-link" href="实验六/2020210215023郑惠宇/index.html">6.1 列表 <span class="arr">→</span></a>
-          <a class="p-link" href="实验六/2020210215023郑惠宇/goods.html">6.2 详情 <span class="arr">→</span></a>
-        </div>
-      </article>
-      <article class="project">
-        <div class="p-top"><span class="p-dir">实验七 /</span><span class="p-type">前端实验</span></div>
-        <h3>页面综合练习</h3>
-        <p>Web 前端课程练习，综合性页面构建与样式。</p>
-        <a class="p-link" href="实验七/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
-      </article>
-      <article class="project">
-        <div class="p-top"><span class="p-dir">实验八 /</span><span class="p-type">前端实验</span></div>
-        <h3>交互与脚本</h3>
-        <p>Web 前端课程练习，加入 JavaScript 交互与脚本。</p>
-        <a class="p-link" href="实验八/2020210215023郑惠宇/index.html">打开页面 <span class="arr">→</span></a>
-      </article>
-      <article class="project">
-        <div class="p-top"><span class="p-dir">实验九 /</span><span class="p-type">响应式</span></div>
-        <h3>移动端 / 桌面端适配</h3>
-        <p>Web 前端课程练习，移动端与桌面端双版本页面。</p>
-        <div class="p-links">
-          <a class="p-link" href="实验九/2020210215023郑惠宇/mobile.html">9.1 移动端 <span class="arr">→</span></a>
-          <a class="p-link" href="实验九/2020210215023郑惠宇/desktop.html">9.2 桌面 <span class="arr">→</span></a>
-        </div>
+        <div class="p-top"><span class="p-dir">ReportFlow /</span><span class="p-type">文档生成</span></div>
+        <h3>受约束的 DOCX 文档生成系统</h3>
+        <p>面向 DOCX 模板的文档生成：解析文档结构、识别可填写字段、人工确认锚点后确定性渲染 DOCX/PDF；模型只提建议、不直接改动文档。</p>
+        <a class="p-link" href="https://github.com/zhhhhhhhy/ReportFlow" target="_blank" rel="noopener">查看源码 <span class="arr">↗</span></a>
       </article>
     </div>
   </div>
