@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模型在进步，上下文却没有 · Huiyu Zheng</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e11'/%3E%3Ctext x='32' y='44' font-size='34' font-family='monospace' font-weight='700' fill='%23ffb454' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --bg:#0b0e11;--panel:#12161c;--line:#1f2730;--line2:#2a3542;
+  --text:#d8e0e9;--muted:#7d899c;--dim:#56606f;
+  --accent:#ffb454;--accent2:#7fd1c1;--radius:14px;
+  --font-disp:'Space Grotesk','Noto Sans SC',sans-serif;
+  --font-body:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:#ffcc85}
+::selection{background:rgba(255,180,84,.28);color:#fff}
+.container{max-width:760px;margin:0 auto;padding:0 22px}
+
+/* 顶栏 */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(11,14,17,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;height:54px;max-width:760px;margin:0 auto;padding:0 22px}
+.back{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.back:hover{color:var(--accent)}
+.brand{font-family:var(--font-mono);font-size:13px;color:var(--dim)}
+.brand b{color:var(--accent)}
+
+/* 文章 */
+article{padding:52px 0 40px}
+.post-kicker{font-family:var(--font-mono);color:var(--accent2);font-size:14px;letter-spacing:1px;margin-bottom:16px}
+.post-kicker::before{content:"~/posts/";color:var(--dim)}
+h1.title{font-family:var(--font-disp);font-size:clamp(28px,4.5vw,38px);font-weight:700;line-height:1.25;letter-spacing:-.5px;margin-bottom:14px}
+.post-meta{font-family:var(--font-mono);font-size:13px;color:var(--dim);margin-bottom:34px;display:flex;gap:18px;flex-wrap:wrap}
+.post-meta .tag{color:var(--accent2)}
+
+/* 正文 */
+.body p{margin-bottom:20px;color:var(--text);font-weight:300}
+.body strong{color:#fff;font-weight:500}
+.body em{color:var(--accent)}
+.body h2{font-family:var(--font-disp);font-size:22px;font-weight:600;margin:36px 0 16px;color:var(--text)}
+.body h2 .n{color:var(--accent);font-family:var(--font-mono);font-size:16px;margin-right:10px}
+.body blockquote{margin:26px 0;padding:18px 22px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;color:var(--text);font-weight:300}
+.body blockquote .qk{display:block;font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box{margin:26px 0;padding:20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+.body .hl-box .t{font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box p{margin:0;color:var(--muted);font-size:16px}
+.body ul,.body ol{margin:0 0 20px 4px;padding-left:22px;color:var(--text);font-weight:300}
+.body li{margin-bottom:10px}
+.body li b{color:#fff;font-weight:500}
+
+.end-mark{margin:44px 0 8px;font-family:var(--font-mono);color:var(--dim);font-size:14px}
+.divider{height:1px;background:var(--line);margin:8px 0 30px}
+
+footer{padding:20px 0 60px;color:var(--dim);font-family:var(--font-mono);font-size:13px}
+.foot-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-row a{color:var(--muted)}
+.foot-row a:hover{color:var(--accent)}
+@media(max-width:560px){body{font-size:16px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="back" href="../index.html">← 返回主页</a>
+    <span class="brand">&lt;<b>Z</b>heng/&gt;</span>
+  </div>
+</div>
+
+<article class="container">
+  <div class="post-kicker">观点 · context</div>
+  <h1 class="title">模型在进步，上下文却没有</h1>
+  <div class="post-meta">
+    <span>2026-10-05</span>
+    <span class="tag"># AI 工程</span>
+    <span class="tag"># context</span>
+  </div>
+
+  <div class="body">
+    <p>今天看到一个说法，越想越觉得说到点子上：<strong>AI 模型一直在进步，但上下文并没有跟着进步。</strong>这意味着，很多本该由模型记住的东西，得靠我们自己积累。</p>
+
+    <h2><span class="n">01</span>模型在进步，上下文却没有</h2>
+    <p>模型的推理、生成能力一年一个样，但它对你这个人的理解——你是谁、你在做什么、你想要什么——并不会自动变好。每一次对话，AI 对我仍然像一个"第一次见面的人"。</p>
+    <p>能力是模型的事，上下文是我们和模型之间的事。模型再强，如果不知道我的背景和意图，也很难用得好。所以模型的进步，并不等于"它更懂我"。</p>
+
+    <h2><span class="n">02</span>能做的：积累"个人的上下文"</h2>
+    <p>既然模型不记得，我们就自己存。个人上下文可以有各种表达方式：<strong>行为准则、使用习惯、偏好……</strong></p>
+    <p>它可以是 skill，也可以不是 skill；可以是 Markdown，也可以是别的形式。形式不重要，重要的是它被你<strong>长期维护、按需取用</strong>。</p>
+
+    <h2><span class="n">03</span>我的做法：维护一个属于自己的 context</h2>
+    <p>我现在在做的是：积累一些 skill，再维护一份关于我自己的文档，合起来构成"我个人的 context"。</p>
+    <p>它的使用方式是<strong>按需存取、渐进式披露（progressive disclosure）</strong>：要用到什么，就取什么，而不是一股脑全塞进去。这样 context 才会越用越像自己，而不是一堆堆在那里的死资料。</p>
+
+    <h2><span class="n">04</span>一个诚实的存疑</h2>
+    <p>但这里有个我还没想通的问题：<strong>我个人的能力并不强，还是学生，也没有太多技术沉淀。</strong></p>
+    <p>这样一份 context，究竟是帮我更好地用 AI，还是反而成了负担、妨碍我？——我不确定。它可能帮我补上经验的不足，也可能让我把"积累上下文"做成了另一种 fake work：看起来很忙，却没有真正被用起来。先记下来，边用边验证。</p>
+
+    <blockquote>
+      <span class="qk">// 点题</span>
+      问题的关键，也许不在"模型还能多强"，而在"context 能不能跟着你一起成长"。模型在进步，上下文却没有——我们能做、也该做的，就是 <strong>context 的增强</strong>。
+    </blockquote>
+  </div>
+
+  <div class="end-mark">// EOF</div>
+  <div class="divider"></div>
+</article>
+
+<footer class="container">
+  <div class="foot-row">
+    <span>© 2026 Huiyu Zheng</span>
+    <a href="../index.html">← 返回主页</a>
+  </div>
+</footer>
+
+</body>
+</html>
