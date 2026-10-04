@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我做了个汇报的 skill · Huiyu Zheng</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e11'/%3E%3Ctext x='32' y='44' font-size='34' font-family='monospace' font-weight='700' fill='%23ffb454' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --bg:#0b0e11;--panel:#12161c;--line:#1f2730;--line2:#2a3542;
+  --text:#d8e0e9;--muted:#7d899c;--dim:#56606f;
+  --accent:#ffb454;--accent2:#7fd1c1;--radius:14px;
+  --font-disp:'Space Grotesk','Noto Sans SC',sans-serif;
+  --font-body:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:#ffcc85}
+::selection{background:rgba(255,180,84,.28);color:#fff}
+.container{max-width:760px;margin:0 auto;padding:0 22px}
+
+/* 顶栏 */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(11,14,17,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;height:54px;max-width:760px;margin:0 auto;padding:0 22px}
+.back{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.back:hover{color:var(--accent)}
+.brand{font-family:var(--font-mono);font-size:13px;color:var(--dim)}
+.brand b{color:var(--accent)}
+
+/* 文章 */
+article{padding:52px 0 40px}
+.post-kicker{font-family:var(--font-mono);color:var(--accent2);font-size:14px;letter-spacing:1px;margin-bottom:16px}
+.post-kicker::before{content:"~/posts/";color:var(--dim)}
+h1.title{font-family:var(--font-disp);font-size:clamp(28px,4.5vw,38px);font-weight:700;line-height:1.25;letter-spacing:-.5px;margin-bottom:14px}
+.post-meta{font-family:var(--font-mono);font-size:13px;color:var(--dim);margin-bottom:34px;display:flex;gap:18px;flex-wrap:wrap}
+.post-meta .tag{color:var(--accent2)}
+
+/* 正文 */
+.body p{margin-bottom:20px;color:var(--text);font-weight:300}
+.body strong{color:#fff;font-weight:500}
+.body em{color:var(--accent)}
+.body h2{font-family:var(--font-disp);font-size:22px;font-weight:600;margin:36px 0 16px;color:var(--text)}
+.body h2 .n{color:var(--accent);font-family:var(--font-mono);font-size:16px;margin-right:10px}
+.body blockquote{margin:26px 0;padding:18px 22px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;color:var(--text);font-weight:300}
+.body blockquote .qk{display:block;font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box{margin:26px 0;padding:20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+.body .hl-box .t{font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box p{margin:0;color:var(--muted);font-size:16px}
+.body ul,.body ol{margin:0 0 20px 4px;padding-left:22px;color:var(--text);font-weight:300}
+.body li{margin-bottom:10px}
+.body li b{color:#fff;font-weight:500}
+
+.end-mark{margin:44px 0 8px;font-family:var(--font-mono);color:var(--dim);font-size:14px}
+.divider{height:1px;background:var(--line);margin:8px 0 30px}
+
+footer{padding:20px 0 60px;color:var(--dim);font-family:var(--font-mono);font-size:13px}
+.foot-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-row a{color:var(--muted)}
+.foot-row a:hover{color:var(--accent)}
+@media(max-width:560px){body{font-size:16px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="back" href="../index.html">← 返回主页</a>
+    <span class="brand">&lt;<b>Z</b>heng/&gt;</span>
+  </div>
+</div>
+
+<article class="container">
+  <div class="post-kicker">观点 · skill · 初稿</div>
+  <h1 class="title">我做了个汇报的 skill</h1>
+  <div class="post-meta">
+    <span>2026-10-04</span>
+    <span class="tag"># AI 工程</span>
+    <span class="tag"># skill</span>
+  </div>
+
+  <div class="body">
+    <p>如果人只负责 judge（判断）、不管理中间过程，那 judge 得有一个前提：<strong>你得先看得懂 AI 到底做了什么。</strong>顺着这个想法，我做了一个"汇报的 skill"。</p>
+
+    <h2><span class="n">01</span>人只负责 judge，不管理过程</h2>
+    <p>这和 vibe coding、human in loop 是一脉相承的：中间过程交给 AI，人负责最终判断。但"判断"这件事有个被忽略的前提——你要有足够的信息去判断。看不懂 AI 做了什么，judge 就变成猜。</p>
+
+    <h2><span class="n">02</span>问题是：AI 该怎么向你汇报</h2>
+    <p>让 AI 汇报很容易，让它<strong>汇报得你能看懂、能据此判断</strong>，很难。于是"怎么汇报"本身值得被做成一个 skill/tool，而不是每次临时发挥。</p>
+
+    <h2><span class="n">03</span>我做的：一个汇报的 skill</h2>
+    <ul>
+      <li>让 AI 交付时按你的方式汇报：做了什么、为什么这么做、哪里可能有风险、需要你看什么。</li>
+      <li>核心是"服务于人的 judge"，而不是"炫示它干了多少活"。</li>
+    </ul>
+
+    <h2><span class="n">04</span>汇报风格，靠长期调教</h2>
+    <p>每个人的汇报风格不一样——有人要结论先行，有人要看过程，有人要风险清单。所以这个 skill 不设死模板：<strong>在长期积累里不断调教 AI，让它学会"该怎么向我汇报"，越用越贴合。</strong></p>
+
+    <blockquote>
+      <span class="qk">// TODO</span>
+      新想法，先记下来。具体怎么做成、长什么样，后续再补。
+    </blockquote>
+  </div>
+
+  <div class="end-mark">// EOF</div>
+  <div class="divider"></div>
+</article>
+
+<footer class="container">
+  <div class="foot-row">
+    <span>© 2026 Huiyu Zheng</span>
+    <a href="../index.html">← 返回主页</a>
+  </div>
+</footer>
+
+</body>
+</html>
