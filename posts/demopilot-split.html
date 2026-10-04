@@ -145,6 +145,18 @@ footer{padding:20px 0 60px;color:var(--dim);font-family:var(--font-mono);font-si
       <span class="qk">// 这一篇本身</span>
       记录这次对话，本身也是一次 <strong>context 的增强</strong>——把一次真实协作沉淀下来，下次可以直接复用这套走法，而不是每次从零开始。
     </blockquote>
+    <h2><span class="n">07</span>定稿：意图 / 评估 / 结果，三件套</h2>
+    <p>再往下讨论，这轮对话收束成 DemoPilot 的三块核心规划：</p>
+    <div class="hl-box"><span class="t">// DemoPilot 三件套</span>
+      <p><strong>① 意图</strong>——用户输入意图描述后，系统用<b>选择题</b>逐步澄清（一定是选择题，可允许自由发挥），逼出边界 / 优先级 / 验收 / 约束。<br>
+      <strong>② 评估方式</strong>——AI 全程自验收：先硬编码验收（编译 / 测试 / 运行，Agent 反复迭代时自己验），再引入 browser use / computer use 做真实交互验收、测边界；判据是"功能能不能完成"（页面精美度对 demo 不重要）；人只在最终做最终验收。<br>
+      <strong>③ 验收 / 结果</strong>——前端网页：用户输入意图 → 选择题澄清 → 生成 demo → 做成可跳转卡片 → 生成过程有进度条（实时显示 Agent 中间过程）→ 最终卡片呈现成品，用户直接看到。</p>
+    </div>
+
+    <blockquote>
+      <span class="qk">// 用立正《真本事》的框架回头校验</span>
+      拿这套规划对照立正的公开 context，它是站得住的：<strong>先说清结果，再讨论工具</strong>（Axiom 1）；人把专业判断放到"定义目标、设计验收、承担后果"的位置、实现交给 AI（Axiom 7）；"意图不清先生成草案"也正好对应立正验证过的"<strong>用户难预先描述完整需求，但会对具体方案作出反应</strong>"。唯一要防的是：进度条这类"中间过程展示"别变成 fake work 的<strong>内部记分牌</strong>——看着在动、却连接不到真实成果；评估应锚定"成果被使用 / 被拒绝"，而不是"过程看起来很忙"。
+    </blockquote>
   </div>
 
   <div class="end-mark">// EOF</div>
