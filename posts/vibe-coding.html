@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vibe coding：AI 已足够强，瓶颈在于怎么用 · Huiyu Zheng</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e11'/%3E%3Ctext x='32' y='44' font-size='34' font-family='monospace' font-weight='700' fill='%23ffb454' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --bg:#0b0e11;--panel:#12161c;--line:#1f2730;--line2:#2a3542;
+  --text:#d8e0e9;--muted:#7d899c;--dim:#56606f;
+  --accent:#ffb454;--accent2:#7fd1c1;--radius:14px;
+  --font-disp:'Space Grotesk','Noto Sans SC',sans-serif;
+  --font-body:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:#ffcc85}
+::selection{background:rgba(255,180,84,.28);color:#fff}
+.container{max-width:760px;margin:0 auto;padding:0 22px}
+
+/* 顶栏 */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(11,14,17,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;height:54px;max-width:760px;margin:0 auto;padding:0 22px}
+.back{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.back:hover{color:var(--accent)}
+.brand{font-family:var(--font-mono);font-size:13px;color:var(--dim)}
+.brand b{color:var(--accent)}
+
+/* 文章 */
+article{padding:52px 0 40px}
+.post-kicker{font-family:var(--font-mono);color:var(--accent2);font-size:14px;letter-spacing:1px;margin-bottom:16px}
+.post-kicker::before{content:"~/posts/";color:var(--dim)}
+h1.title{font-family:var(--font-disp);font-size:clamp(28px,4.5vw,38px);font-weight:700;line-height:1.25;letter-spacing:-.5px;margin-bottom:14px}
+.post-meta{font-family:var(--font-mono);font-size:13px;color:var(--dim);margin-bottom:34px;display:flex;gap:18px;flex-wrap:wrap}
+.post-meta .tag{color:var(--accent2)}
+
+/* 正文 */
+.body p{margin-bottom:20px;color:var(--text);font-weight:300}
+.body strong{color:#fff;font-weight:500}
+.body em{color:var(--accent)}
+.body h2{font-family:var(--font-disp);font-size:22px;font-weight:600;margin:36px 0 16px;color:var(--text)}
+.body h2 .n{color:var(--accent);font-family:var(--font-mono);font-size:16px;margin-right:10px}
+.body blockquote{margin:26px 0;padding:18px 22px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;color:var(--text);font-weight:300}
+.body blockquote .qk{display:block;font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box{margin:26px 0;padding:20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+.body .hl-box .t{font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box p{margin:0;color:var(--muted);font-size:16px}
+.body code{font-family:var(--font-mono);color:var(--accent);font-size:.88em;background:var(--panel);padding:2px 7px;border-radius:6px;border:1px solid var(--line)}
+.body ul,.body ol{margin:0 0 20px 4px;padding-left:22px;color:var(--text);font-weight:300}
+.body li{margin-bottom:10px}
+.body li b{color:#fff;font-weight:500}
+
+.end-mark{margin:44px 0 8px;font-family:var(--font-mono);color:var(--dim);font-size:14px}
+.divider{height:1px;background:var(--line);margin:8px 0 30px}
+
+footer{padding:20px 0 60px;color:var(--dim);font-family:var(--font-mono);font-size:13px}
+.foot-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-row a{color:var(--muted)}
+.foot-row a:hover{color:var(--accent)}
+@media(max-width:560px){body{font-size:16px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="back" href="../index.html">← 返回主页</a>
+    <span class="brand">&lt;<b>Z</b>heng/&gt;</span>
+  </div>
+</div>
+
+<article class="container">
+  <div class="post-kicker">观点 · vibe coding</div>
+  <h1 class="title">vibe coding：AI 已足够强，瓶颈在于怎么用</h1>
+  <div class="post-meta">
+    <span>2026-10-04</span>
+    <span class="tag"># AI-native</span>
+    <span class="tag"># 效率</span>
+  </div>
+
+  <div class="body">
+    <p>最近在 AI-native 的圈子里反复听到一个词，叫 <strong>vibe coding</strong>。第一次听到时的第一反应是：这算不算一种偷懒？后来自己实打实操了一轮才发现，它和"偷懒"差了很远——它背后是一整套关于"人该怎么用 AI"的判断。这篇文章，是我对这组判断的整理。</p>
+
+    <h2><span class="n">01</span>什么是 vibe coding</h2>
+    <p>vibe coding 这个说法来自 Karpathy（2025 年提出）：你不再逐行手写代码，而是把意图说清楚，让 AI 主导生成、运行、迭代，人退到"指挥 + 验收"的位置。</p>
+    <p>它不是"让 AI 写，人躺平"，而是<strong>重新分工</strong>：实现交给机器，判断留给人。真正要修炼的，不是写代码的手感，而是"说清楚要什么"和"判断做得好不好"这两件事。</p>
+
+    <h2><span class="n">02</span>AI 和人，谁更强</h2>
+    <p>在写代码这件事上，结论其实很干脆：<strong>AI 的能力已经远超于人。</strong>它速度远大于人，产出质量在多数场景不逊于平均水平，而且不知疲倦。</p>
+    <p>既然 AI 更快也更强，人就不该成为限制它的环节。那种"每一行都要人盯着改"的做法，本质是把最强的工具用成了最慢的方式。人在这个系统里真正的价值，不在"写得比 AI 好"，而在"决定做什么、做到什么程度算好"。</p>
+
+    <h2><span class="n">03</span>vibe coding 需要什么</h2>
+    <p>既然瓶颈不在 AI 的能力，那在哪里？在我自己的实操里，它落在三件事上：</p>
+    <div class="hl-box"><span class="t">// vibe coding 的三要素</span>
+      <p>① <strong>context（上下文）</strong>——AI 的输出质量，高度取决于它看得见什么。上下文给得越充分，它越不容易凭空发挥、越少跑偏。<br>
+      ② <strong>意图（intent）</strong>——AI 不会替你决定你要什么。目标、边界、期望的效果，必须由人清晰化地交出去。意图含糊，AI 只能猜，猜就必然偏。<br>
+      ③ <strong>评估（evaluate）</strong>——也是最重要的一件。如果没有"做成什么样才算好"的标准，AI 根本不知道何时该停、该改哪里。</p>
+    </div>
+    <p>这三件事里，前两件是"给足输入"，第三件是"守住输出"。恰恰是最难、也最容易被忽略的第三件，决定了一个人 vibe coding 的水平。</p>
+
+    <h2><span class="n">04</span>过程交给 AI，结果交给人的判断</h2>
+    <p>AI 并非没有边界。过去它没有"眼睛"，没法亲眼评估自己的输出；现在它有了视觉，已经能做一定程度的自检。但最后一道评估，仍要由人握住——不是因为人写得更好，而是因为<strong>产品要由人来用</strong>。</p>
+    <p>一个人的初始设计必然是有限的，没法要求最开始的设计完全达标。真正推动产品前进的，是来自真实使用的反馈：没有人用，就没有反馈；没有反馈，产品就不会进步。</p>
+    <p>所以最好的协作方式是 <strong>human in loop</strong>——中间过程不 loop，结果上人一定在 loop：人负责最初的设计，也负责最终的验收。这和 fake work 是同一个根：<strong>评价（evaluate）才是驱动进步的那一环。</strong>fake work 里我们缺的是对自己的评价，vibe coding 里我们缺的是对结果的评价。</p>
+
+    <h2><span class="n">05</span>还没解决的一件事：边界验收</h2>
+    <p>但把"最终验收"交给人也带来一个新问题：<strong>人的验收能力同样有限。</strong></p>
+    <p>一个大型项目里，边界情况浩如烟海——极端的输入、并发的冲突、未曾预料的组合——单靠一个人去逐条覆盖，几乎不可能。人很容易验不到这些边界，于是只能靠堆大量的人去验收边界。</p>
+
+    <blockquote>
+      <span class="qk">// 留一个还没想透的问题</span>
+      在 AI 时代，边界验收这件事，能不能不再靠"人海"来解决？是不是可以让 AI 自己构造边界测试、自己去找失败案例，人只做最终的确认？——这个问题我还没有想透，先记在这里。它或许会成为 vibe coding 在"验收"这条路上，下一个真正值得解决的问题。
+    </blockquote>
+  </div>
+
+  <div class="end-mark">// EOF</div>
+  <div class="divider"></div>
+</article>
+
+<footer class="container">
+  <div class="foot-row">
+    <span>© 2026 Huiyu Zheng</span>
+    <a href="../index.html">← 返回主页</a>
+  </div>
+</footer>
+
+</body>
+</html>
