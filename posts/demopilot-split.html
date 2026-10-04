@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>把 DemoPilot 拆一遍：一次真实对话里的 web coding · Huiyu Zheng</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e11'/%3E%3Ctext x='32' y='44' font-size='34' font-family='monospace' font-weight='700' fill='%23ffb454' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --bg:#0b0e11;--panel:#12161c;--line:#1f2730;--line2:#2a3542;
+  --text:#d8e0e9;--muted:#7d899c;--dim:#56606f;
+  --accent:#ffb454;--accent2:#7fd1c1;--radius:14px;
+  --font-disp:'Space Grotesk','Noto Sans SC',sans-serif;
+  --font-body:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:#ffcc85}
+::selection{background:rgba(255,180,84,.28);color:#fff}
+.container{max-width:760px;margin:0 auto;padding:0 22px}
+
+/* 顶栏 */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(11,14,17,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;height:54px;max-width:760px;margin:0 auto;padding:0 22px}
+.back{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.back:hover{color:var(--accent)}
+.brand{font-family:var(--font-mono);font-size:13px;color:var(--dim)}
+.brand b{color:var(--accent)}
+
+/* 文章 */
+article{padding:52px 0 40px}
+.post-kicker{font-family:var(--font-mono);color:var(--accent2);font-size:14px;letter-spacing:1px;margin-bottom:16px}
+.post-kicker::before{content:"~/posts/";color:var(--dim)}
+h1.title{font-family:var(--font-disp);font-size:clamp(28px,4.5vw,38px);font-weight:700;line-height:1.25;letter-spacing:-.5px;margin-bottom:14px}
+.post-meta{font-family:var(--font-mono);font-size:13px;color:var(--dim);margin-bottom:34px;display:flex;gap:18px;flex-wrap:wrap}
+.post-meta .tag{color:var(--accent2)}
+
+/* 正文 */
+.body p{margin-bottom:20px;color:var(--text);font-weight:300}
+.body strong{color:#fff;font-weight:500}
+.body em{color:var(--accent)}
+.body h2{font-family:var(--font-disp);font-size:22px;font-weight:600;margin:36px 0 16px;color:var(--text)}
+.body h2 .n{color:var(--accent);font-family:var(--font-mono);font-size:16px;margin-right:10px}
+.body blockquote{margin:26px 0;padding:18px 22px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;color:var(--text);font-weight:300}
+.body blockquote .qk{display:block;font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box{margin:26px 0;padding:20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+.body .hl-box .t{font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box p{margin:0;color:var(--muted);font-size:16px}
+.body ul,.body ol{margin:0 0 20px 4px;padding-left:22px;color:var(--text);font-weight:300}
+.body li{margin-bottom:10px}
+.body li b{color:#fff;font-weight:500}
+
+.end-mark{margin:44px 0 8px;font-family:var(--font-mono);color:var(--dim);font-size:14px}
+.divider{height:1px;background:var(--line);margin:8px 0 30px}
+
+footer{padding:20px 0 60px;color:var(--dim);font-family:var(--font-mono);font-size:13px}
+.foot-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-row a{color:var(--muted)}
+.foot-row a:hover{color:var(--accent)}
+@media(max-width:560px){body{font-size:16px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="back" href="../index.html">← 返回主页</a>
+    <span class="brand">&lt;<b>Z</b>heng/&gt;</span>
+  </div>
+</div>
+
+<article class="container">
+  <div class="post-kicker">复盘 · DemoPilot · web coding</div>
+  <h1 class="title">把 DemoPilot 拆一遍：一次真实对话里的 web coding</h1>
+  <div class="post-meta">
+    <span>2026-10-05</span>
+    <span class="tag"># 复盘</span>
+    <span class="tag"># web coding</span>
+    <span class="tag"># 架构</span>
+  </div>
+
+  <div class="body">
+    <p>这一篇不是现成的观点，而是一次<strong>真实过程的复盘</strong>：我把自己的项目 DemoPilot 拆了一遍，边拆边和 AI 讨论，最后沉淀出一套"怎么做 web coding"的走法。记录它，是因为这个过程本身比结论更有价值——它是"人和 AI 一起把一件事想清楚"的样子。</p>
+
+    <h2><span class="n">01</span>起点：为什么从 DemoPilot 开始</h2>
+    <p>想写"AI 时代怎么做架构师"，但"架构"太抽象，不如直接拿一个真实项目拆。DemoPilot 是一个让 Agent Team 造 Agent Demo 的系统：人类负责目标、边界与验收，Agent 完成架构、前后端、测试与迭代。它天然就是"人负责意图、AI 负责实现"的样本。于是从它的第一个模块——意图——开始拆。</p>
+
+    <h2><span class="n">02</span>意图模块：不断提问，真能把意图问清楚吗</h2>
+    <p>DemoPilot 的第一个模块，是让使用者尽可能把意图表达清楚。我当时的方法是<strong>用不断提问来逼出意图</strong>。但这里有个真问题：这个"不断提问"，真的能把用户的目的问清楚吗？</p>
+    <p>结论是：<strong>能，但有边界。</strong>提问提升的是"表达的保真度"，而不是"意图本身的质量"。</p>
+    <div class="hl-box"><span class="t">// 提问能做到 vs 做不到</span>
+      <p><strong>能做到</strong>：把用户没主动说出的约束逼出来；把"我以为说清了"变成"确认说清了"；对"模糊但已存在"的目标有效收敛。<br>
+      <strong>做不到</strong>：用户自己也不知道答案时，提问只会让用户更困惑；提问维度错了会固化错误假设；表达清楚不等于意图正确；过度追问导致用户凑合；抓不到隐性约束（成本、合规、隐藏偏好）。</p>
+    </div>
+    <p>对应的改进方向：</p>
+    <ul>
+      <li><b>有维度地问</b>——只围绕 <b>边界 / 优先级 / 验收 / 约束</b> 四个维度收敛，问完就停，不无限问。</li>
+      <li><b>把问答沉淀成"一页纸意图声明"</b>，最后让用户确认，而不是一堆散落的对话记录。</li>
+      <li><b>最该问出来的是验收标准</b>——意图最终要落到"什么算完成"（呼应 evaluate）。</li>
+      <li><b>承认边界</b>——几轮之后仍说不清，就明确告诉用户"目标需要你自己想清楚"。</li>
+    </ul>
+
+    <h2><span class="n">03</span>意图不清时，该不该生成</h2>
+    <p>顺着往下：如果用户自己也不知道答案，是不是就不该生成？结论是：<strong>不是"不生成"，而是"不盲目标准生成"。</strong></p>
+    <ul>
+      <li>意图<b>完全模糊、连验收都说不出来</b> → 停下，不生成。</li>
+      <li>意图<b>大致有、细节不清</b> → 生成一个低成本草案当脚手架——人对实物比对着抽象问题更容易说清。</li>
+      <li>意图<b>清楚</b> → 才进入正式生成与迭代。</li>
+    </ul>
+    <p>所以决策点不在"生成 or 不生成"，而在<strong>"以多高置信度、以什么形态生成"</strong>。这和 RAGForm"证据不足转人工"是同一套逻辑：不确定时，不硬生成一个错的答案。</p>
+
+    <h2><span class="n">04</span>落地：批式提问 + 判定器 + 阈值</h2>
+    <p>意图模块具体怎么实现？讨论出的结构：</p>
+    <ul>
+      <li><b>批式提问，按维度分批</b>——不是一道一道问，而是按"边界 / 优先级 / 验收 / 约束"分批打，批与批不重复、不漏。</li>
+      <li><b>用独立子智能体当判定器</b>，对每一批回答评价"意图是否清晰"，而不是让主流程自己判断。</li>
+      <li><b>阈值决定是否推进</b>；但判定标准要先定义死——比如"用户能否独立写出边界 + 验收 + 至少一条约束"，否则判定器自己也会含糊。</li>
+      <li><b>设最大轮数兜底</b>——到上限还不清晰，降级为草案模式，而不是死循环。</li>
+      <li><b>判定器输出依据</b>（引用户原话证明"哪条说清了、哪条没有"），不只给分数，可追溯、可抽查。</li>
+    </ul>
+    <p>一轮提问约 1~2 千 token，模型完全能接受，长度不是问题。</p>
+
+    <h2><span class="n">05</span>生成阶段：最容易翻车的三个点</h2>
+    <p>意图判定通过后进入生成。这一步看起来"没什么大问题"，其实恰恰是整个系统最容易翻车的地方：</p>
+    <ul>
+      <li><b>没有中途验收点</b>——意图清楚不代表生成不跑偏。等整个项目生成完才发现方向错了，返工成本巨大。应该在每个子模块完成后让用户 / 判定器确认一次——这正是 human in loop 该出现的地方。</li>
+      <li><b>生成任务内部也要拆</b>——前端、后端、测试、环境……单 agent 长链路容易失焦。意图阶段拆的是"问题"，生成阶段拆的是"实现"。</li>
+      <li><b>长上下文隐患在生成阶段累积</b>——提问 1~2 千 token 没事，但生成一路累积会触长度上限，需要在途中把"已完成的上下文"压缩 / 归档。</li>
+    </ul>
+
+    <h2><span class="n">06</span>沉淀：这次对话得到的 web coding 方法</h2>
+    <p>把这次讨论整理成几条可复用的走法：</p>
+    <div class="hl-box"><span class="t">// web coding 的方法清单</span>
+      <p>① 人负责意图与判断，AI 负责实现；过程不 in loop，结果必须 human in loop。<br>
+      ② 拆，是一切的地基：先拆"问题"（意图），再拆"实现"（生成）；每个单元要有"算完成"的定义。<br>
+      ③ 提问要有维度、要沉淀成声明、要逼出验收标准；意图不清就降级草案，不硬生成。<br>
+      ④ 生成阶段要有中途验收点、要拆内部、要防上下文膨胀。<br>
+      ⑤ 判定与评价要可追溯、要防误判、要有兜底。</p>
+    </div>
+
+    <blockquote>
+      <span class="qk">// 这一篇本身</span>
+      记录这次对话，本身也是一次 <strong>context 的增强</strong>——把一次真实协作沉淀下来，下次可以直接复用这套走法，而不是每次从零开始。
+    </blockquote>
+  </div>
+
+  <div class="end-mark">// EOF</div>
+  <div class="divider"></div>
+</article>
+
+<footer class="container">
+  <div class="foot-row">
+    <span>© 2026 Huiyu Zheng</span>
+    <a href="../index.html">← 返回主页</a>
+  </div>
+</footer>
+
+</body>
+</html>
