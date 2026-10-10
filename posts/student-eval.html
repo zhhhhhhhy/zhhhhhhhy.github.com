@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生时代的外部评测：用八股指导项目构造 · Huiyu Zheng</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e11'/%3E%3Ctext x='32' y='44' font-size='34' font-family='monospace' font-weight='700' fill='%23ffb454' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --bg:#0b0e11;--panel:#12161c;--line:#1f2730;--line2:#2a3542;
+  --text:#d8e0e9;--muted:#7d899c;--dim:#56606f;
+  --accent:#ffb454;--accent2:#7fd1c1;--radius:14px;
+  --font-disp:'Space Grotesk','Noto Sans SC',sans-serif;
+  --font-body:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --font-mono:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:#ffcc85}
+::selection{background:rgba(255,180,84,.28);color:#fff}
+.container{max-width:760px;margin:0 auto;padding:0 22px}
+
+/* 顶栏 */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(11,14,17,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;height:54px;max-width:760px;margin:0 auto;padding:0 22px}
+.back{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.back:hover{color:var(--accent)}
+.brand{font-family:var(--font-mono);font-size:13px;color:var(--dim)}
+.brand b{color:var(--accent)}
+
+/* 文章 */
+article{padding:52px 0 40px}
+.post-kicker{font-family:var(--font-mono);color:var(--accent2);font-size:14px;letter-spacing:1px;margin-bottom:16px}
+.post-kicker::before{content:"~/posts/";color:var(--dim)}
+h1.title{font-family:var(--font-disp);font-size:clamp(28px,4.5vw,38px);font-weight:700;line-height:1.25;letter-spacing:-.5px;margin-bottom:14px}
+.post-meta{font-family:var(--font-mono);font-size:13px;color:var(--dim);margin-bottom:34px;display:flex;gap:18px;flex-wrap:wrap}
+.post-meta .tag{color:var(--accent2)}
+
+/* 正文 */
+.body p{margin-bottom:20px;color:var(--text);font-weight:300}
+.body strong{color:#fff;font-weight:500}
+.body em{color:var(--accent)}
+.body h2{font-family:var(--font-disp);font-size:22px;font-weight:600;margin:36px 0 16px;color:var(--text)}
+.body h2 .n{color:var(--accent);font-family:var(--font-mono);font-size:16px;margin-right:10px}
+.body blockquote{margin:26px 0;padding:18px 22px;border-left:3px solid var(--accent);background:var(--panel);border-radius:0 10px 10px 0;color:var(--text);font-weight:300}
+.body blockquote .qk{display:block;font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box{margin:26px 0;padding:20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+.body .hl-box .t{font-family:var(--font-mono);color:var(--accent2);font-size:13px;margin-bottom:8px}
+.body .hl-box p{margin:0;color:var(--muted);font-size:16px}
+.body ul,.body ol{margin:0 0 20px 4px;padding-left:22px;color:var(--text);font-weight:300}
+.body li{margin-bottom:10px}
+.body li b{color:#fff;font-weight:500}
+
+.end-mark{margin:44px 0 8px;font-family:var(--font-mono);color:var(--dim);font-size:14px}
+.divider{height:1px;background:var(--line);margin:8px 0 30px}
+
+footer{padding:20px 0 60px;color:var(--dim);font-family:var(--font-mono);font-size:13px}
+.foot-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-row a{color:var(--muted)}
+.foot-row a:hover{color:var(--accent)}
+@media(max-width:560px){body{font-size:16px}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="back" href="../index.html">← 返回主页</a>
+    <span class="brand">&lt;<b>Z</b>heng/&gt;</span>
+  </div>
+</div>
+
+<article class="container">
+  <div class="post-kicker">思考 · 学生时代 · 外部评测</div>
+  <h1 class="title">学生时代的外部评测：用八股指导项目构造</h1>
+  <div class="post-meta">
+    <span>2026-10-10</span>
+    <span class="tag"># 思考</span>
+    <span class="tag"># 学生时代</span>
+    <span class="tag"># 外部评测</span>
+  </div>
+
+  <div class="body">
+    <p>这篇来自一次和朋友的聊天。他给了我一个思路，我顺着想下去，发现它能回答一个我一直没太想清楚的问题：<strong>学生时代做项目，到底怎么知道自己做得好不好？以及，为什么在学校里也能成为有技术的？</strong></p>
+
+    <h2><span class="n">01</span>学生时代缺的不是努力，是外部评测</h2>
+    <p>做项目的时候，你其实不知道自己做的东西到底是好还是不好。大概率它只是一个 demo——即便你在一个真实的业务场景下做了提升，这个提升对整个项目来说也并没有特别有用。</p>
+    <p>问题在于，你会漏考虑掉很多点。这些点可能是你的<strong>设计思想</strong>，可能是<strong>流程上的设计</strong>，也可能是<strong>技术选型</strong>——恰恰是这些比较重要的东西，在做类似 demo 的时候是得不到产出的，或者说产出并不多。</p>
+    <p>根因是：<strong>你没有那方面的眼界来构建这个项目。</strong>而外部其实也无法给到你一个很好的技术上的支持和评估——业务方只看业务结果，导师不一定懂技术，你卡在中间，既不知道哪里漏了，也不知道怎么补。</p>
+
+    <h2><span class="n">02</span>一个被忽略的外部评测来源：八股</h2>
+    <p>市面上会有很多号教八股——我认为的八股，就是类似于"智能体的记忆是怎么设计的"这种具体问题。它实际上是从真实业务里抽取出来的、比较具体的例子。</p>
+    <p>举个例子。有人回答记忆设计，会想当然地说"有三层"。我在做 OpenClaw 的时候也看到它有三层记忆。但涉及到具体的<strong>工具记忆</strong>问题——工具调用返回的内容或长或短，以及一些对整体流程来说比较边角料的东西——这些你在看开源项目的时候其实是学不到的。</p>
+    <p>而八股可以给你很好的思路。因为它已经把"哪个点值得想"提前标出来了，相当于一份<strong>可获得的、被压缩的外部经验</strong>。</p>
+
+    <h2><span class="n">03</span>方法：用八股指导项目的构造</h2>
+    <p>朋友给的思路是这样的：准备很多很多这样的八股题，然后把它们包进一个项目里。具体来说，就是<strong>用八股来指导项目的构造</strong>。</p>
+    <div class="hl-box"><span class="t">// 用八股指导项目构造</span>
+      <p>准备很多八股题 → 包进一个项目里 → 用八股指导项目的构造。<br>
+      这样的方式可以提高个人项目的眼界；同时在项目中的确会遇到的问题、设计思路也会有；指标也可以是真实的。</p>
+    </div>
+    <p>这解决了 01 里的核心问题：你缺的不是努力，是"该往哪想"的眼界。八股替你补上了这部分——它告诉你哪些设计点是重要的，然后你在自己的项目里把它们真正做出来、遇到真实问题、得到真实指标。</p>
+
+    <h2><span class="n">04</span>推论：实习的目的已经变了</h2>
+    <p>顺着这个思路往下推，我对实习的看法也变了。</p>
+    <p>原先我认为，实习的目的是<strong>获取外部的评估</strong>——去公司里，让真实的业务和资深的人告诉你做得好不好。</p>
+    <p>但现在发现，其实有<strong>八股和开源项目</strong>就可以做评估了。那实习还剩下什么？</p>
+    <ul>
+      <li>实习只是说能够学到<strong>管理</strong>和<strong>流程规范</strong>。</li>
+      <li>别的（技术成长）还不如待在学校里，靠"八股指导项目"这种方式来学，学得更快。</li>
+      <li>实习也能提供真实业务场景，但其实这些不是那么重要了。</li>
+    </ul>
+    <p>所以现在再看"为什么要实习"，答案和以前不一样了。</p>
+
+    <h2><span class="n">05</span>边界：为什么计算机可以这样</h2>
+    <p>这个思路成立有一个前提：<strong>主要是计算机成本低。</strong></p>
+    <p>像嵌入式、硬件方向的就非常需要实习——因为你在学校里搭不起那个环境、碰不到真实的硬件流程。但走软件或者 agent 方向，其实出去实习没多大用——你需要的外部评测，八股和开源项目已经能给你了。</p>
+    <div class="hl-box"><span class="t">// 方向决定路径</span>
+      <p><strong>硬件相关</strong>：需要出去实习，学校里搭不起环境。<br>
+      <strong>软件 / agent</strong>：八股 + 开源项目 + 学校项目，足以完成技术成长；实习主要补管理和流程规范。</p>
+    </div>
+
+    <h2><span class="n">06</span>收束</h2>
+    <p>所以这一套思路能够讲清楚两件事：<strong>为什么要实习，以及为什么在学校里也能够成为有技术的。</strong></p>
+    <p>外部评测不一定来自公司。它可以来自你主动用八股构造的项目——把真实业务里抽出来的具体问题，包进你自己的项目里，让眼界、设计思路和真实指标都长出来。</p>
+
+    <blockquote>
+      <span class="qk">// 这一篇本身</span>
+      这是一次"和室友聊聊又明白了"的记录。写下来是因为这个思路改变了我对"实习 vs 学校项目"的判断——我应该早点思考这一切的。
+    </blockquote>
+  </div>
+
+  <div class="end-mark">// EOF</div>
+  <div class="divider"></div>
+</article>
+
+<footer class="container">
+  <div class="foot-row">
+    <span>© 2026 Huiyu Zheng</span>
+    <a href="../index.html">← 返回主页</a>
+  </div>
+</footer>
+
+</body>
+</html>
